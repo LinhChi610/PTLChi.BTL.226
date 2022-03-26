@@ -18,7 +18,7 @@ namespace PTLChi.BTL._226.Controllers
         // GET: Don_DH
         public ActionResult Index()
         {
-            var don_DH = db.Don_DH.Include(d => d.Khach_hangs).Include(d => d.nhanvien_GHs);
+            var don_DH = db.Don_DH.Include(d => d.Khach_hangs).Include(d => d.Nhanvien_GHs);
             return View(don_DH.ToList());
         }
 
@@ -59,8 +59,8 @@ namespace PTLChi.BTL._226.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ID_kh = new SelectList(db.Khach_hang, "ID_kh", "Ten_kh", don_DH.ID_kh);
-            ViewBag.Id_nvgh = new SelectList(db.Nhanvien_GH, "ID_nvgh", "Ten_nvgh", don_DH.Id_nvgh);
+            ViewBag.ID_kh = new SelectList(db.Khach_hang, "ID_kh", "Ten_kh", don_DH.ID_KhachHang);
+            ViewBag.Id_nvgh = new SelectList(db.Nhanvien_GH, "ID_nvgh", "Ten_nvgh", don_DH.Id_NhanvienGH);
             return View(don_DH);
         }
 
@@ -76,8 +76,8 @@ namespace PTLChi.BTL._226.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ID_kh = new SelectList(db.Khach_hang, "ID_kh", "Ten_kh", don_DH.ID_kh);
-            ViewBag.Id_nvgh = new SelectList(db.Nhanvien_GH, "ID_nvgh", "Ten_nvgh", don_DH.Id_nvgh);
+            ViewBag.ID_kh = new SelectList(db.Khach_hang, "ID_kh", "Ten_kh", don_DH.ID_KhachHang);
+            ViewBag.Id_nvgh = new SelectList(db.Nhanvien_GH, "ID_nvgh", "Ten_nvgh", don_DH.Id_NhanvienGH);
             return View(don_DH);
         }
 
@@ -94,8 +94,8 @@ namespace PTLChi.BTL._226.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ID_kh = new SelectList(db.Khach_hang, "ID_kh", "Ten_kh", don_DH.ID_kh);
-            ViewBag.Id_nvgh = new SelectList(db.Nhanvien_GH, "ID_nvgh", "Ten_nvgh", don_DH.Id_nvgh);
+            ViewBag.ID_kh = new SelectList(db.Khach_hang, "ID_kh", "Ten_kh", don_DH.ID_KhachHang);
+            ViewBag.Id_nvgh = new SelectList(db.Nhanvien_GH, "ID_nvgh", "Ten_nvgh", don_DH.Id_NhanvienGH);
             return View(don_DH);
         }
 

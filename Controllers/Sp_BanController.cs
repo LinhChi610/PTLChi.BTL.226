@@ -58,7 +58,7 @@ namespace PTLChi.BTL._226.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ID_sp = new SelectList(db.SanPhams, "ID_sp", "ID_dm", sp_Ban.ID_sp);
+            ViewBag.ID_sp = new SelectList(db.SanPhams, "ID_sp", "ID_dm", sp_Ban.ID_Sanpham);
             return View(sp_Ban);
         }
 
@@ -74,7 +74,7 @@ namespace PTLChi.BTL._226.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ID_sp = new SelectList(db.SanPhams, "ID_sp", "ID_dm", sp_Ban.ID_sp);
+            ViewBag.ID_sp = new SelectList(db.SanPhams, "ID_sp", "ID_dm", sp_Ban.ID_Sanpham);
             return View(sp_Ban);
         }
 
@@ -91,7 +91,7 @@ namespace PTLChi.BTL._226.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ID_sp = new SelectList(db.SanPhams, "ID_sp", "ID_dm", sp_Ban.ID_sp);
+            ViewBag.ID_sp = new SelectList(db.SanPhams, "ID_sp", "ID_dm", sp_Ban.ID_Sanpham);
             return View(sp_Ban);
         }
 

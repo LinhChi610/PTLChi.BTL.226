@@ -18,7 +18,7 @@ namespace PTLChi.BTL._226.Controllers
         // GET: Chitiet_DH
         public ActionResult Index()
         {
-            var chitiet_DH = db.Chitiet_DH.Include(c => c.SanPhams);
+            var chitiet_DH = db.Chitiet_DH.Include(c => c.Sanphams);
             return View(chitiet_DH.ToList());
         }
 
@@ -58,7 +58,7 @@ namespace PTLChi.BTL._226.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ID_sp = new SelectList(db.SanPhams, "ID_sp", "ID_dm", chitiet_DH.ID_sp);
+            ViewBag.ID_sp = new SelectList(db.SanPhams, "ID_sp", "ID_dm", chitiet_DH.ID_Sanpham);
             return View(chitiet_DH);
         }
 
@@ -74,7 +74,7 @@ namespace PTLChi.BTL._226.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ID_sp = new SelectList(db.SanPhams, "ID_sp", "ID_dm", chitiet_DH.ID_sp);
+            ViewBag.ID_sp = new SelectList(db.SanPhams, "ID_sp", "ID_dm", chitiet_DH.ID_Sanpham);
             return View(chitiet_DH);
         }
 
@@ -91,7 +91,7 @@ namespace PTLChi.BTL._226.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ID_sp = new SelectList(db.SanPhams, "ID_sp", "ID_dm", chitiet_DH.ID_sp);
+            ViewBag.ID_sp = new SelectList(db.SanPhams, "ID_sp", "ID_dm", chitiet_DH.ID_Sanpham);
             return View(chitiet_DH);
         }
 

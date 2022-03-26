@@ -13,7 +13,7 @@ namespace QLBHDTDD.Models
         [DisplayName("ID Đánh giá")]
         public int ID_DanhGia { get; set; }
         [Required, DisplayName("ID Sản phẩm")]
-        public int ID_SanPham { get; set; }
+        public int ID_Sanpham { get; set; }
         [Required, DisplayName("Họ tên người đánh giá")]
         public string HoTen { get; set; }
         [Required, DisplayName("Ngày giờ đánh giá")]
