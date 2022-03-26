@@ -11,9 +11,9 @@ namespace QLBHDTDD.Models
     {
         [Key]
         [DisplayName("ID Khách hàng")]
-        public int ID_kh { get; set; }
+        public int ID_KhachHang { get; set; }
         [Required, DisplayName("Tên khách hàng")]
-        public string Ten_kh { get; set; }
+        public string Ten_KhachHang { get; set; }
         [Required, DisplayName("Số điện thoại khách hàng")]
         public string Sdt { get; set; }
         [Required, DisplayName("E-mail khách hàng")]

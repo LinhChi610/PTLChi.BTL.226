@@ -11,15 +11,15 @@ namespace QLBHDTDD.Models
     {
         [Key]
         [DisplayName("ID Sản phẩm")]
-        public int ID_sp { get; set; }
+        public int ID_Sanpham { get; set; }
         [Required, DisplayName("ID Danh mục")]
-        public string ID_dm { get; set; }
+        public string ID_Danhmuc { get; set; }
         [Required, DisplayName("Tên sản phẩm")]
-        public string Ten_sp { get; set; }
+        public string Ten_Sanpham { get; set; }
         [Required, DisplayName("Ảnh sản phẩm")]
-        public string Anh_sp { get; set; }
+        public string Anh_Sanpham { get; set; }
         [Required, DisplayName("Giá sản phẩm")]
-        public int Gia_sp { get; set; }
+        public int Gia_Sanpham { get; set; }
         [Required, DisplayName("Số lượng sản phẩm")]
         public int So_luong { get; set; }
         [Required, DisplayName("Kích thước sản phẩm")]
@@ -31,7 +31,7 @@ namespace QLBHDTDD.Models
         [Required, DisplayName("Thời gian bảo hành")]
         public string Bao_hanh { get; set; }
         [Required, DisplayName("Giá khuyến mãi")]
-        public string Gia_km { get; set; }
+        public string Gia_khuyen_mai { get; set; }
         [Required, DisplayName("Ngày bắt đầu khuyến mãi")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]

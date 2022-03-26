@@ -11,15 +11,15 @@ namespace QLBHDTDD.Models
     {
         [Key]
         [DisplayName("ID Đánh giá")]
-        public int ID_dg { get; set; }
+        public int ID_DanhGia { get; set; }
         [Required, DisplayName("ID Sản phẩm")]
-        public int ID_sp { get; set; }
+        public int ID_SanPham { get; set; }
         [Required, DisplayName("Họ tên người đánh giá")]
-        public string Ho_ten { get; set; }
+        public string HoTen { get; set; }
         [Required, DisplayName("Ngày giờ đánh giá")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime Ngay_gio { get; set; }
+        public DateTime Ngay_Gio { get; set; }
         [Required, DisplayName("Nội dung đánh giá")]
         public string Noi_dung { get; set; }
         [Required, DisplayName("Điện thoại người đánh giá")]

@@ -11,13 +11,13 @@ namespace QLBHDTDD.Models
     {
         [Key]
         [DisplayName("ID Hoá đơn")]
-        public int ID_hd { get; set; }
+        public int ID_HoaDon { get; set; }
         [Required, DisplayName("ID Khách hàng")]
-        public int ID_kh { get; set; }
+        public int ID_KhachHang { get; set; }
         [Required, DisplayName("ID tình trạng đơn đặt hàng ")]
         public int ID_tinhtrang { get; set; }
         [Required, DisplayName("ID Nhân viên giao hàng")]
-        public int Id_nvgh { get; set; }
+        public int Id_NhanvienGH { get; set; }
         [Required, DisplayName("Ngày lập đơn đặt hàng")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
@@ -27,14 +27,14 @@ namespace QLBHDTDD.Models
         [Required, DisplayName("Giá khuyến mãi")]
         public string Gia_khuyen_mai{ get; set; }
         [Required, DisplayName("Tổng giá trị đơn hàng")]
-        public int Tong_gia { get; set; }
+        public int Tong_Gia { get; set; }
         [Required, DisplayName("Địa điểm nhận đơn hàng")]
-        public string Noi_nhan { get; set; }
+        public string Dia_Chi_Nhan { get; set; }
         [Required, DisplayName("Ghi chú")]
         public string Chi_chu { get; set; }
         public ICollection<Chitiet_dh> Chitiet_DHs { get; set; }
         public TinhTrang_dh TinhTrang_dhs { get; set; }
-        public Nhanvien_GH nhanvien_GHs { get; set; }
+        public Nhanvien_GH Nhanvien_GHs { get; set; }
         public Khach_hang Khach_hangs { get; set; }
     }
 }

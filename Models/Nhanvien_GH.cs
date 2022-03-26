@@ -11,9 +11,9 @@ namespace QLBHDTDD.Models
     {
         [Key]
         [DisplayName("ID Nhân viên giao hàng")]
-        public int ID_nvgh { get; set; }
+        public int ID_NhanvienGH { get; set; }
         [Required, DisplayName("Tên nhân viên giao hàng")]
-        public string Ten_nvgh { get; set; }
+        public string Ten_NhanvienGH { get; set; }
         [Required, DisplayName("Số điện thoại thứ 1 của nhân viên giao hàng")]
         public string Sdt_1 { get; set; }
         [Required, DisplayName("Số điện thoại thứ 2 của nhân viên giao hàng")]

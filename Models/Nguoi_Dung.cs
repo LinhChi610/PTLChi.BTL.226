@@ -11,7 +11,7 @@ namespace QLBHDTDD.Models
     {
         [Key]
         [DisplayName("ID Người dùng")]
-        public int ID_nd { get; set; }
+        public int ID_Nguoidung { get; set; }
         [Required, DisplayName("Tài khoản")]
         public string ID { get; set; }
         [Required, DisplayName("Mật khẩu")]

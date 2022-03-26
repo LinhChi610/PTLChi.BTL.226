@@ -11,9 +11,9 @@ namespace QLBHDTDD.Models
     {
         [Key]
         [DisplayName("ID Danh mục")]
-        public int ID_dm { get; set; }
+        public int ID_Danhmuc { get; set; }
         [Required, DisplayName("Tên danh mục")]
-        public string Ten_danhmuc { get; set; }
+        public string Ten_Danhmuc { get; set; }
         public ICollection<SanPham> SanPhams { get; set; }
     }
 }
