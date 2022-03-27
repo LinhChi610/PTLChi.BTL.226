@@ -129,7 +129,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\Chitiet_dhController.cs" />
     <Compile Include="Controllers\DanhGiasController.cs" />
     <Compile Include="Controllers\Danhmuc_spController.cs" />
     <Compile Include="Controllers\Don_dhController.cs" />
@@ -143,9 +142,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202203261508173_1.cs" />
-    <Compile Include="Migrations\202203261508173_1.designer.cs">
-      <DependentUpon>202203261508173_1.cs</DependentUpon>
+    <Compile Include="Migrations\202203270504501_test.cs" />
+    <Compile Include="Migrations\202203270504501_test.designer.cs">
+      <DependentUpon>202203270504501_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203270507186_test2.cs" />
+    <Compile Include="Migrations\202203270507186_test2.designer.cs">
+      <DependentUpon>202203270507186_test2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BTLDbContext.cs" />
@@ -265,8 +268,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202203261508173_1.resx">
-      <DependentUpon>202203261508173_1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202203270504501_test.resx">
+      <DependentUpon>202203270504501_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203270507186_test2.resx">
+      <DependentUpon>202203270507186_test2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
