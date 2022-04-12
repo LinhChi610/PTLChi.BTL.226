@@ -1,4 +1,4 @@
-﻿@model QLBHDTDD.Models.Don_DH
+﻿@model QLBHDTDD.Models.Don_dh
 
 @{
     ViewBag.Title = "Details";
@@ -12,19 +12,19 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Khach_hangs.Ten_kh)
+            @Html.DisplayNameFor(model => model.Khach_hangs.Ten_KhachHang)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Khach_hangs.Ten_kh)
+            @Html.DisplayFor(model => model.Khach_hangs.Ten_KhachHang)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.nhanvien_GHs.Ten_nvgh)
+            @Html.DisplayNameFor(model => model.nhanvien_GHs.Ten_NhanvienGH)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.nhanvien_GHs.Ten_nvgh)
+            @Html.DisplayFor(model => model.nhanvien_GHs.Ten_NhanvienGH)
         </dd>
 
         <dt>
@@ -44,19 +44,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Tong_gia)
+            @Html.DisplayNameFor(model => model.Tong_Gia)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Tong_gia)
+            @Html.DisplayFor(model => model.Tong_Gia)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Noi_nhan)
+            @Html.DisplayNameFor(model => model.Dia_Chi_Nhan)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Noi_nhan)
+            @Html.DisplayFor(model => model.Dia_Chi_Nhan)
         </dd>
 
         <dt>
@@ -70,6 +70,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_hd }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_HoaDon }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

@@ -13,7 +13,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Ten_nvgh)
+            @Html.DisplayNameFor(model => model.Ten_NhanvienGH)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Sdt_1)
@@ -27,7 +27,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Ten_nvgh)
+            @Html.DisplayFor(modelItem => item.Ten_NhanvienGH)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Sdt_1)
@@ -36,9 +36,9 @@
             @Html.DisplayFor(modelItem => item.Sdt_2)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID_nvgh }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID_nvgh }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID_nvgh })
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_NhanvienGH }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_NhanvienGH }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_NhanvienGH })
         </td>
     </tr>
 }

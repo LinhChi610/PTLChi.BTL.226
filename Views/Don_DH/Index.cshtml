@@ -1,4 +1,4 @@
-﻿@model IEnumerable<QLBHDTDD.Models.Don_DH>
+﻿@model IEnumerable<QLBHDTDD.Models.Don_dh>
 
 @{
     ViewBag.Title = "Index";
@@ -13,10 +13,10 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Khach_hangs.Ten_kh)
+            @Html.DisplayNameFor(model => model.Khach_hangs.Ten_KhachHang)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.nhanvien_GHs.Ten_nvgh)
+            @Html.DisplayNameFor(model => model.Nhanvien_GHs.Ten_NhanvienGH)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ID_tinhtrang)
@@ -25,10 +25,11 @@
             @Html.DisplayNameFor(model => model.Ngay_lap)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Tong_gia)
+            @Html.DisplayNameFor(model => model.Tong_Gia)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Noi_nhan)
+        public string Dia_Chi_Nhan { get; set; }
+            @Html.DisplayNameFor(model => model.Dia_Chi_Nhan)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Chi_chu)
@@ -39,10 +40,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Khach_hangs.Ten_kh)
+            @Html.DisplayFor(modelItem => item.Khach_hangs.Ten_KhachHang)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.nhanvien_GHs.Ten_nvgh)
+            @Html.DisplayFor(modelItem => item.Nhanvien_GHs.Ten_NhanvienGH)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ID_tinhtrang)
@@ -51,18 +52,18 @@
             @Html.DisplayFor(modelItem => item.Ngay_lap)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Tong_gia)
+            @Html.DisplayFor(modelItem => item.Tong_Gia)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Noi_nhan)
+            @Html.DisplayFor(modelItem => item.Dia_Chi_Nhan)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Chi_chu)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID_hd }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID_hd }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID_hd })
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_HoaDon }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_HoaDon }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_HoaDon })
         </td>
     </tr>
 }

@@ -16,13 +16,13 @@
         <h4>Nhanvien_GH</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.ID_nvgh)
+        @Html.HiddenFor(model => model.ID_NhanvienGH)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Ten_nvgh, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Ten_NhanvienGH, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Ten_nvgh, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Ten_nvgh, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Ten_NhanvienGH, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Ten_NhanvienGH, "", new { @class = "text-danger" })
             </div>
         </div>
 
