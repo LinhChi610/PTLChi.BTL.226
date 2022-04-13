@@ -1,4 +1,4 @@
-﻿@model QLBHDTDD.Models.Don_dh
+﻿@model PTLChi.BTL._226.Models.Don_dh
 
 @{
     ViewBag.Title = "Details";
@@ -8,7 +8,7 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Don_DH</h4>
+    <h4>Don_dh</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -20,11 +20,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.nhanvien_GHs.Ten_NhanvienGH)
+            @Html.DisplayNameFor(model => model.Nhanvien_GHs.Ten_NhanvienGH)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.nhanvien_GHs.Ten_NhanvienGH)
+            @Html.DisplayFor(model => model.Nhanvien_GHs.Ten_NhanvienGH)
         </dd>
 
         <dt>
@@ -41,6 +41,22 @@
 
         <dd>
             @Html.DisplayFor(model => model.Ngay_lap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bao_hanh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bao_hanh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gia_khuyen_mai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gia_khuyen_mai)
         </dd>
 
         <dt>

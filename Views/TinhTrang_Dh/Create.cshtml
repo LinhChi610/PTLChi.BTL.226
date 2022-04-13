@@ -1,4 +1,4 @@
-﻿@model QLBHDTDD.Models.TinhTrang_dh
+﻿@model PTLChi.BTL._226.Models.TinhTrang_dh
 
 @{
     ViewBag.Title = "Create";
@@ -13,14 +13,14 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>TinhTrang_Dh</h4>
+        <h4>TinhTrang_dh</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.Tinhtrang, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.TinhTrangdh, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Tinhtrang, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Tinhtrang, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.TinhTrangdh, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TinhTrangdh, "", new { @class = "text-danger" })
             </div>
         </div>
 

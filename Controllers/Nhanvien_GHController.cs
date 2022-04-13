@@ -7,7 +7,6 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PTLChi.BTL._226.Models;
-using QLBHDTDD.Models;
 
 namespace PTLChi.BTL._226.Controllers
 {
@@ -18,7 +17,7 @@ namespace PTLChi.BTL._226.Controllers
         // GET: Nhanvien_GH
         public ActionResult Index()
         {
-            return View(db.Nhanvien_GH.ToList());
+            return View(db.Nhanvien_GHs.ToList());
         }
 
         // GET: Nhanvien_GH/Details/5
@@ -28,7 +27,7 @@ namespace PTLChi.BTL._226.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Nhanvien_GH nhanvien_GH = db.Nhanvien_GH.Find(id);
+            Nhanvien_GH nhanvien_GH = db.Nhanvien_GHs.Find(id);
             if (nhanvien_GH == null)
             {
                 return HttpNotFound();
@@ -47,11 +46,11 @@ namespace PTLChi.BTL._226.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID_nvgh,Ten_nvgh,Sdt_1,Sdt_2")] Nhanvien_GH nhanvien_GH)
+        public ActionResult Create([Bind(Include = "ID_NhanvienGH,Ten_NhanvienGH,Sdt_1,Sdt_2")] Nhanvien_GH nhanvien_GH)
         {
             if (ModelState.IsValid)
             {
-                db.Nhanvien_GH.Add(nhanvien_GH);
+                db.Nhanvien_GHs.Add(nhanvien_GH);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -66,7 +65,7 @@ namespace PTLChi.BTL._226.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Nhanvien_GH nhanvien_GH = db.Nhanvien_GH.Find(id);
+            Nhanvien_GH nhanvien_GH = db.Nhanvien_GHs.Find(id);
             if (nhanvien_GH == null)
             {
                 return HttpNotFound();
@@ -79,7 +78,7 @@ namespace PTLChi.BTL._226.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID_nvgh,Ten_nvgh,Sdt_1,Sdt_2")] Nhanvien_GH nhanvien_GH)
+        public ActionResult Edit([Bind(Include = "ID_NhanvienGH,Ten_NhanvienGH,Sdt_1,Sdt_2")] Nhanvien_GH nhanvien_GH)
         {
             if (ModelState.IsValid)
             {
@@ -97,7 +96,7 @@ namespace PTLChi.BTL._226.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Nhanvien_GH nhanvien_GH = db.Nhanvien_GH.Find(id);
+            Nhanvien_GH nhanvien_GH = db.Nhanvien_GHs.Find(id);
             if (nhanvien_GH == null)
             {
                 return HttpNotFound();
@@ -110,8 +109,8 @@ namespace PTLChi.BTL._226.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Nhanvien_GH nhanvien_GH = db.Nhanvien_GH.Find(id);
-            db.Nhanvien_GH.Remove(nhanvien_GH);
+            Nhanvien_GH nhanvien_GH = db.Nhanvien_GHs.Find(id);
+            db.Nhanvien_GHs.Remove(nhanvien_GH);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

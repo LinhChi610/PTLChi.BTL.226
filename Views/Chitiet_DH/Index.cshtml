@@ -1,4 +1,4 @@
-﻿@model IEnumerable<QLBHDTDD.Models.Chitiet_dh>
+﻿@model IEnumerable<PTLChi.BTL._226.Models.Chitiet_dh>
 
 @{
     ViewBag.Title = "Index";
@@ -13,10 +13,10 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.SanPhams.ID_dm)
+            @Html.DisplayNameFor(model => model.Don_dhs.Bao_hanh)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ID_hd)
+            @Html.DisplayNameFor(model => model.Sanphams.ID_Danhmuc)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.So_luong_mua)
@@ -30,10 +30,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.SanPhams.ID_dm)
+            @Html.DisplayFor(modelItem => item.Don_dhs.Bao_hanh)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ID_hd)
+            @Html.DisplayFor(modelItem => item.Sanphams.ID_Danhmuc)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.So_luong_mua)
@@ -42,9 +42,9 @@
             @Html.DisplayFor(modelItem => item.Don_gia)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID_ct_hd }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID_ct_hd }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID_ct_hd })
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_ChitietHoaDon }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_ChitietHoaDon }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_ChitietHoaDon })
         </td>
     </tr>
 }

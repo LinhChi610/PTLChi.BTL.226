@@ -7,7 +7,6 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PTLChi.BTL._226.Models;
-using QLBHDTDD.Models;
 
 namespace PTLChi.BTL._226.Controllers
 {
@@ -18,7 +17,7 @@ namespace PTLChi.BTL._226.Controllers
         // GET: Nguoi_dung
         public ActionResult Index()
         {
-            return View(db.Nguoi_dung.ToList());
+            return View(db.Nguoi_dungs.ToList());
         }
 
         // GET: Nguoi_dung/Details/5
@@ -28,7 +27,7 @@ namespace PTLChi.BTL._226.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Nguoi_dung nguoi_dung = db.Nguoi_dung.Find(id);
+            Nguoi_dung nguoi_dung = db.Nguoi_dungs.Find(id);
             if (nguoi_dung == null)
             {
                 return HttpNotFound();
@@ -47,11 +46,11 @@ namespace PTLChi.BTL._226.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID_nd,ID,Pass,Ten")] Nguoi_dung nguoi_dung)
+        public ActionResult Create([Bind(Include = "ID_Nguoidung,ID,Pass,Ten")] Nguoi_dung nguoi_dung)
         {
             if (ModelState.IsValid)
             {
-                db.Nguoi_dung.Add(nguoi_dung);
+                db.Nguoi_dungs.Add(nguoi_dung);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -66,7 +65,7 @@ namespace PTLChi.BTL._226.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Nguoi_dung nguoi_dung = db.Nguoi_dung.Find(id);
+            Nguoi_dung nguoi_dung = db.Nguoi_dungs.Find(id);
             if (nguoi_dung == null)
             {
                 return HttpNotFound();
@@ -79,7 +78,7 @@ namespace PTLChi.BTL._226.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID_nd,ID,Pass,Ten")] Nguoi_dung nguoi_dung)
+        public ActionResult Edit([Bind(Include = "ID_Nguoidung,ID,Pass,Ten")] Nguoi_dung nguoi_dung)
         {
             if (ModelState.IsValid)
             {
@@ -97,7 +96,7 @@ namespace PTLChi.BTL._226.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Nguoi_dung nguoi_dung = db.Nguoi_dung.Find(id);
+            Nguoi_dung nguoi_dung = db.Nguoi_dungs.Find(id);
             if (nguoi_dung == null)
             {
                 return HttpNotFound();
@@ -110,8 +109,8 @@ namespace PTLChi.BTL._226.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Nguoi_dung nguoi_dung = db.Nguoi_dung.Find(id);
-            db.Nguoi_dung.Remove(nguoi_dung);
+            Nguoi_dung nguoi_dung = db.Nguoi_dungs.Find(id);
+            db.Nguoi_dungs.Remove(nguoi_dung);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

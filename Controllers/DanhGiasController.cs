@@ -7,7 +7,6 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PTLChi.BTL._226.Models;
-using QLBHDTDD.Models;
 
 namespace PTLChi.BTL._226.Controllers
 {
@@ -18,8 +17,8 @@ namespace PTLChi.BTL._226.Controllers
         // GET: DanhGias
         public ActionResult Index()
         {
-            var danhGias = db.DanhGias.Include(d => d.SanPhams);
-            return View(danhGias.ToList());
+            var danhgias = db.Danhgias.Include(d => d.SanPhams);
+            return View(danhgias.ToList());
         }
 
         // GET: DanhGias/Details/5
@@ -29,7 +28,7 @@ namespace PTLChi.BTL._226.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DanhGia danhGia = db.DanhGias.Find(id);
+            DanhGia danhGia = db.Danhgias.Find(id);
             if (danhGia == null)
             {
                 return HttpNotFound();
@@ -40,7 +39,7 @@ namespace PTLChi.BTL._226.Controllers
         // GET: DanhGias/Create
         public ActionResult Create()
         {
-            ViewBag.ID_sp = new SelectList(db.SanPhams, "ID_sp", "ID_dm");
+            ViewBag.ID_Sanpham = new SelectList(db.SanPhams, "ID_Sanpham", "ID_Danhmuc");
             return View();
         }
 
@@ -49,16 +48,16 @@ namespace PTLChi.BTL._226.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID_dg,ID_sp,Ho_ten,Ngay_gio,Noi_dung,Dien_thoai")] DanhGia danhGia)
+        public ActionResult Create([Bind(Include = "ID_DanhGia,ID_Sanpham,HoTen,Ngay_Gio,Noi_dung,Dien_thoai")] DanhGia danhGia)
         {
             if (ModelState.IsValid)
             {
-                db.DanhGias.Add(danhGia);
+                db.Danhgias.Add(danhGia);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ID_sp = new SelectList(db.SanPhams, "ID_sp", "ID_dm", danhGia.ID_Sanpham);
+            ViewBag.ID_Sanpham = new SelectList(db.SanPhams, "ID_Sanpham", "ID_Danhmuc", danhGia.ID_Sanpham);
             return View(danhGia);
         }
 
@@ -69,12 +68,12 @@ namespace PTLChi.BTL._226.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DanhGia danhGia = db.DanhGias.Find(id);
+            DanhGia danhGia = db.Danhgias.Find(id);
             if (danhGia == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.ID_sp = new SelectList(db.SanPhams, "ID_sp", "ID_dm", danhGia.ID_Sanpham);
+            ViewBag.ID_Sanpham = new SelectList(db.SanPhams, "ID_Sanpham", "ID_Danhmuc", danhGia.ID_Sanpham);
             return View(danhGia);
         }
 
@@ -83,7 +82,7 @@ namespace PTLChi.BTL._226.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID_dg,ID_sp,Ho_ten,Ngay_gio,Noi_dung,Dien_thoai")] DanhGia danhGia)
+        public ActionResult Edit([Bind(Include = "ID_DanhGia,ID_Sanpham,HoTen,Ngay_Gio,Noi_dung,Dien_thoai")] DanhGia danhGia)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +90,7 @@ namespace PTLChi.BTL._226.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ID_sp = new SelectList(db.SanPhams, "ID_sp", "ID_dm", danhGia.ID_Sanpham);
+            ViewBag.ID_Sanpham = new SelectList(db.SanPhams, "ID_Sanpham", "ID_Danhmuc", danhGia.ID_Sanpham);
             return View(danhGia);
         }
 
@@ -102,7 +101,7 @@ namespace PTLChi.BTL._226.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DanhGia danhGia = db.DanhGias.Find(id);
+            DanhGia danhGia = db.Danhgias.Find(id);
             if (danhGia == null)
             {
                 return HttpNotFound();
@@ -115,8 +114,8 @@ namespace PTLChi.BTL._226.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            DanhGia danhGia = db.DanhGias.Find(id);
-            db.DanhGias.Remove(danhGia);
+            DanhGia danhGia = db.Danhgias.Find(id);
+            db.Danhgias.Remove(danhGia);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace QLBHDTDD.Models
+namespace PTLChi.BTL._226.Models
 {
     public class Nguoi_dung
     {

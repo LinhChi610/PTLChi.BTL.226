@@ -1,4 +1,4 @@
-﻿@model IEnumerable<QLBHDTDD.Models.DanhGia>
+﻿@model IEnumerable<PTLChi.BTL._226.Models.DanhGia>
 
 @{
     ViewBag.Title = "Index";
@@ -48,9 +48,9 @@
             @Html.DisplayFor(modelItem => item.Dien_thoai)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.ID_DanhGia }) |
-            @Html.ActionLink("Details", "Details", new { id = item.ID_DanhGia }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.ID_DanhGia })
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_DanhGia }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_DanhGia }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_DanhGia })
         </td>
     </tr>
 }

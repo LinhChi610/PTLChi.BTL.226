@@ -7,7 +7,6 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PTLChi.BTL._226.Models;
-using QLBHDTDD.Models;
 
 namespace PTLChi.BTL._226.Controllers
 {
@@ -18,7 +17,7 @@ namespace PTLChi.BTL._226.Controllers
         // GET: Khach_hang
         public ActionResult Index()
         {
-            return View(db.Khach_hang.ToList());
+            return View(db.Khach_Hangs.ToList());
         }
 
         // GET: Khach_hang/Details/5
@@ -28,7 +27,7 @@ namespace PTLChi.BTL._226.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Khach_hang khach_hang = db.Khach_hang.Find(id);
+            Khach_hang khach_hang = db.Khach_Hangs.Find(id);
             if (khach_hang == null)
             {
                 return HttpNotFound();
@@ -47,11 +46,11 @@ namespace PTLChi.BTL._226.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID_kh,Ten_kh,Sdt,Email")] Khach_hang khach_hang)
+        public ActionResult Create([Bind(Include = "ID_KhachHang,Ten_KhachHang,Sdt,Email")] Khach_hang khach_hang)
         {
             if (ModelState.IsValid)
             {
-                db.Khach_hang.Add(khach_hang);
+                db.Khach_Hangs.Add(khach_hang);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -66,7 +65,7 @@ namespace PTLChi.BTL._226.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Khach_hang khach_hang = db.Khach_hang.Find(id);
+            Khach_hang khach_hang = db.Khach_Hangs.Find(id);
             if (khach_hang == null)
             {
                 return HttpNotFound();
@@ -79,7 +78,7 @@ namespace PTLChi.BTL._226.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID_kh,Ten_kh,Sdt,Email")] Khach_hang khach_hang)
+        public ActionResult Edit([Bind(Include = "ID_KhachHang,Ten_KhachHang,Sdt,Email")] Khach_hang khach_hang)
         {
             if (ModelState.IsValid)
             {
@@ -97,7 +96,7 @@ namespace PTLChi.BTL._226.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Khach_hang khach_hang = db.Khach_hang.Find(id);
+            Khach_hang khach_hang = db.Khach_Hangs.Find(id);
             if (khach_hang == null)
             {
                 return HttpNotFound();
@@ -110,8 +109,8 @@ namespace PTLChi.BTL._226.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Khach_hang khach_hang = db.Khach_hang.Find(id);
-            db.Khach_hang.Remove(khach_hang);
+            Khach_hang khach_hang = db.Khach_Hangs.Find(id);
+            db.Khach_Hangs.Remove(khach_hang);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

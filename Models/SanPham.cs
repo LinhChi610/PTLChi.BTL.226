@@ -5,7 +5,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace QLBHDTDD.Models
+
+namespace PTLChi.BTL._226.Models
 {
     public class SanPham
     {
@@ -40,7 +41,6 @@ namespace QLBHDTDD.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Ketthuc_km { get; set; }
-        public ICollection<Sp_Ban> Sp_Bans { get; set; }
         public ICollection<Chitiet_dh> Chitiet_dhs { get; set; }
         public ICollection<DanhGia> DanhGias { get; set; }
         public virtual Danhmuc_sp Danhmuc_sps { get; set; }

@@ -7,7 +7,6 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PTLChi.BTL._226.Models;
-using QLBHDTDD.Models;
 
 namespace PTLChi.BTL._226.Controllers
 {
@@ -47,7 +46,7 @@ namespace PTLChi.BTL._226.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID_sp,ID_dm,Ten_sp,Anh_sp,Gia_sp,So_luong,Kich_thuoc,Mau_sac,Bo_nho,Bao_hanh,Gia_km,Batdau_km,Ketthuc_km")] SanPham sanPham)
+        public ActionResult Create([Bind(Include = "ID_Sanpham,ID_Danhmuc,Ten_Sanpham,Anh_Sanpham,Gia_Sanpham,So_luong,Kich_thuoc,Mau_sac,Bo_nho,Bao_hanh,Gia_khuyen_mai,Batdau_km,Ketthuc_km")] SanPham sanPham)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +78,7 @@ namespace PTLChi.BTL._226.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID_sp,ID_dm,Ten_sp,Anh_sp,Gia_sp,So_luong,Kich_thuoc,Mau_sac,Bo_nho,Bao_hanh,Gia_km,Batdau_km,Ketthuc_km")] SanPham sanPham)
+        public ActionResult Edit([Bind(Include = "ID_Sanpham,ID_Danhmuc,Ten_Sanpham,Anh_Sanpham,Gia_Sanpham,So_luong,Kich_thuoc,Mau_sac,Bo_nho,Bao_hanh,Gia_khuyen_mai,Batdau_km,Ketthuc_km")] SanPham sanPham)
         {
             if (ModelState.IsValid)
             {

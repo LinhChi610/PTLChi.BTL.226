@@ -7,7 +7,6 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PTLChi.BTL._226.Models;
-using QLBHDTDD.Models;
 
 namespace PTLChi.BTL._226.Controllers
 {
@@ -18,7 +17,7 @@ namespace PTLChi.BTL._226.Controllers
         // GET: Danhmuc_sp
         public ActionResult Index()
         {
-            return View(db.Danhmuc_sp.ToList());
+            return View(db.Danhmuc_sps.ToList());
         }
 
         // GET: Danhmuc_sp/Details/5
@@ -28,7 +27,7 @@ namespace PTLChi.BTL._226.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Danhmuc_sp danhmuc_sp = db.Danhmuc_sp.Find(id);
+            Danhmuc_sp danhmuc_sp = db.Danhmuc_sps.Find(id);
             if (danhmuc_sp == null)
             {
                 return HttpNotFound();
@@ -47,11 +46,11 @@ namespace PTLChi.BTL._226.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID_dm,Ten_danhmuc")] Danhmuc_sp danhmuc_sp)
+        public ActionResult Create([Bind(Include = "ID_Danhmuc,Ten_Danhmuc")] Danhmuc_sp danhmuc_sp)
         {
             if (ModelState.IsValid)
             {
-                db.Danhmuc_sp.Add(danhmuc_sp);
+                db.Danhmuc_sps.Add(danhmuc_sp);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -66,7 +65,7 @@ namespace PTLChi.BTL._226.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Danhmuc_sp danhmuc_sp = db.Danhmuc_sp.Find(id);
+            Danhmuc_sp danhmuc_sp = db.Danhmuc_sps.Find(id);
             if (danhmuc_sp == null)
             {
                 return HttpNotFound();
@@ -79,7 +78,7 @@ namespace PTLChi.BTL._226.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID_dm,Ten_danhmuc")] Danhmuc_sp danhmuc_sp)
+        public ActionResult Edit([Bind(Include = "ID_Danhmuc,Ten_Danhmuc")] Danhmuc_sp danhmuc_sp)
         {
             if (ModelState.IsValid)
             {
@@ -97,7 +96,7 @@ namespace PTLChi.BTL._226.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Danhmuc_sp danhmuc_sp = db.Danhmuc_sp.Find(id);
+            Danhmuc_sp danhmuc_sp = db.Danhmuc_sps.Find(id);
             if (danhmuc_sp == null)
             {
                 return HttpNotFound();
@@ -110,8 +109,8 @@ namespace PTLChi.BTL._226.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Danhmuc_sp danhmuc_sp = db.Danhmuc_sp.Find(id);
-            db.Danhmuc_sp.Remove(danhmuc_sp);
+            Danhmuc_sp danhmuc_sp = db.Danhmuc_sps.Find(id);
+            db.Danhmuc_sps.Remove(danhmuc_sp);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

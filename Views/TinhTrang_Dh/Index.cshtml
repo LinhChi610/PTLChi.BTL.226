@@ -1,4 +1,4 @@
-﻿@model IEnumerable<QLBHDTDD.Models.TinhTrang_dh>
+﻿@model IEnumerable<PTLChi.BTL._226.Models.TinhTrang_dh>
 
 @{
     ViewBag.Title = "Index";
@@ -13,7 +13,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Tinhtrang)
+            @Html.DisplayNameFor(model => model.TinhTrangdh)
         </th>
         <th></th>
     </tr>
@@ -21,7 +21,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Tinhtrang)
+            @Html.DisplayFor(modelItem => item.TinhTrangdh)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID_tinh_trang }) |

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<QLBHDTDD.Models.Khach_hang>
+﻿@model IEnumerable<PTLChi.BTL._226.Models.Khach_hang>
 
 @{
     ViewBag.Title = "Index";
@@ -36,9 +36,9 @@
             @Html.DisplayFor(modelItem => item.Email)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Ten_KhachHang }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Ten_KhachHang }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Ten_KhachHang })
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_KhachHang }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_KhachHang }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_KhachHang })
         </td>
     </tr>
 }
