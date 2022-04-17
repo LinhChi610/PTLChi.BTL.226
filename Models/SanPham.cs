@@ -41,8 +41,7 @@ namespace PTLChi.BTL._226.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Ketthuc_km { get; set; }
-        public ICollection<Chitiet_dh> Chitiet_dhs { get; set; }
-        public ICollection<DanhGia> DanhGias { get; set; }
+        public ICollection<Chitiet_dh> Chitiet_dhs { get; set; }        
         public virtual Danhmuc_sp Danhmuc_sps { get; set; }
     }
 }

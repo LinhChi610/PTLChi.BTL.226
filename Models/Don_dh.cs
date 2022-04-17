@@ -33,8 +33,7 @@ namespace PTLChi.BTL._226.Models
         public string Dia_Chi_Nhan { get; set; }
         [Required, DisplayName("Ghi chú")]
         public string Chi_chu { get; set; }
-        public ICollection<Chitiet_dh> Chitiet_DHs { get; set; }
-        public TinhTrang_dh TinhTrang_dhs { get; set; }
+        public ICollection<Chitiet_dh> Chitiet_DHs { get; set; }       
         public Nhanvien_GH Nhanvien_GHs { get; set; }
         public Khach_hang Khach_hangs { get; set; }
     }
