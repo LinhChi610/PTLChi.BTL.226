@@ -26,13 +26,7 @@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ID_tinhtrang, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ID_tinhtrang, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ID_tinhtrang, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        
 
         <div class="form-group">
             @Html.LabelFor(model => model.Id_NhanvienGH, "Id_NhanvienGH", htmlAttributes: new { @class = "control-label col-md-2" })

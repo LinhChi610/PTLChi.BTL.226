@@ -49,7 +49,7 @@ namespace PTLChi.BTL._226.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID_HoaDon,ID_KhachHang,ID_tinhtrang,Id_NhanvienGH,Ngay_lap,Bao_hanh,Gia_khuyen_mai,Tong_Gia,Dia_Chi_Nhan,Chi_chu")] Don_dh don_dh)
+        public ActionResult Create([Bind(Include = "ID_HoaDon,ID_KhachHang,Id_NhanvienGH,Ngay_lap,Bao_hanh,Gia_khuyen_mai,Tong_Gia,Dia_Chi_Nhan,Chi_chu")] Don_dh don_dh)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace PTLChi.BTL._226.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID_HoaDon,ID_KhachHang,ID_tinhtrang,Id_NhanvienGH,Ngay_lap,Bao_hanh,Gia_khuyen_mai,Tong_Gia,Dia_Chi_Nhan,Chi_chu")] Don_dh don_dh)
+        public ActionResult Edit([Bind(Include = "ID_HoaDon,ID_KhachHang,Id_NhanvienGH,Ngay_lap,Bao_hanh,Gia_khuyen_mai,Tong_Gia,Dia_Chi_Nhan,Chi_chu")] Don_dh don_dh)
         {
             if (ModelState.IsValid)
             {

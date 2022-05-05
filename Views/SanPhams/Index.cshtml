@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<PTLChi.BTL._226.Models.SanPham>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Trang Chủ";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Thêm Mới", "Create")
 </p>
 <table class="table">
     <tr>
@@ -90,9 +90,9 @@
             @Html.DisplayFor(modelItem => item.Ketthuc_km)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID_Sanpham }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID_Sanpham }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID_Sanpham })
+            @Html.ActionLink("Sửa", "Edit", new { id=item.ID_Sanpham }) |
+            @Html.ActionLink("Thêm", "Details", new { id=item.ID_Sanpham }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.ID_Sanpham })
         </td>
     </tr>
 }

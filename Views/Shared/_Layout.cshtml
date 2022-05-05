@@ -8,35 +8,44 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-            </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active mx-2">@Html.ActionLink("Sản Phẩm", "Index", "SanPhams")</li>  
+                <li class="nav-item active mx-2">@Html.ActionLink("Chi tiết đơn hàng", "Index", "Chitiet_dh")</li>
+                <li class="nav-item active mx-2">@Html.ActionLink("Danh mục sản phẩm", "Index", "Danhmuc_sp")</li>
+                <li class="nav-item active mx-2">@Html.ActionLink("Đơn hàng", "Index", "Don_dh")</li>
+                <li class="nav-item active mx-2">@Html.ActionLink("Khách hàng", "Index", "Khach_Hang")</li>
+                <li class="nav-item active mx-2">@Html.ActionLink("Nhân viên giao hàng", "Index", "Nhanvien_GH")</li>
+ 
+                <li>
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+                        @Html.ActionLink("Đăng Nhập", "Login", "AccountModels")
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Đăng xuất", "Logoff", "AccountModels")
+                    }
+                </li>
+            </ul>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+        </div>
+        </div>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
 </body>
 </html>

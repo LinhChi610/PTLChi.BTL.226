@@ -15,8 +15,6 @@ namespace PTLChi.BTL._226.Models
         public int ID_HoaDon { get; set; }
         [Required, DisplayName("ID Khách hàng")]
         public int ID_KhachHang { get; set; }
-        [Required, DisplayName("ID tình trạng đơn đặt hàng ")]
-        public int ID_tinhtrang { get; set; }
         [Required, DisplayName("ID Nhân viên giao hàng")]
         public int Id_NhanvienGH { get; set; }
         [Required, DisplayName("Ngày lập đơn đặt hàng")]
