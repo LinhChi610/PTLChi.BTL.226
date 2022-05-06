@@ -155,6 +155,10 @@
     <Compile Include="Migrations\202204171519158_delete table2.designer.cs">
       <DependentUpon>202204171519158_delete table2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205060256241_Delete Table3.cs" />
+    <Compile Include="Migrations\202205060256241_Delete Table3.designer.cs">
+      <DependentUpon>202205060256241_Delete Table3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BTLDbContext.cs" />
     <Compile Include="Models\Chitiet_dh.cs" />
@@ -260,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202204171519158_delete table2.resx">
       <DependentUpon>202204171519158_delete table2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205060256241_Delete Table3.resx">
+      <DependentUpon>202205060256241_Delete Table3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
