@@ -25,9 +25,9 @@ namespace  PTLChi.BTL._226.Models
         [ForeignKey("ID_Sanpham")]
         public virtual SanPham Sanphams { get; set; }
 
-        [Required, DisplayName("Số lượng mỗi sản phẩm trong hoá đơn")]
+        [Required, DisplayName("Số lượng")]
         public int So_luong_mua { get; set; }
-        [Required, DisplayName("Giá mỗi loại sản phẩm khi mua")]
+        [Required, DisplayName("Tổng Hóa Đơn")]
         public int Don_gia { get; set; }
     }
 }

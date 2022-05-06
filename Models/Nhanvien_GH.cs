@@ -13,11 +13,11 @@ namespace PTLChi.BTL._226.Models
         [Key]
         [DisplayName("ID Nhân viên giao hàng")]
         public int ID_NhanvienGH { get; set; }
-        [Required, DisplayName("Tên nhân viên giao hàng")]
+        [Required, DisplayName("Tên Nhân viên GH")]
         public string Ten_NhanvienGH { get; set; }
-        [Required, DisplayName("Số điện thoại thứ 1 của nhân viên giao hàng")]
+        [Required, DisplayName("SĐT1 Nhân viên GH")]
         public string Sdt_1 { get; set; }
-        [Required, DisplayName("Số điện thoại thứ 2 của nhân viên giao hàng")]
+        [Required, DisplayName("SĐT2 nhân viên GH")]
         public string Sdt_2 { get; set; }
         public ICollection<Don_dh> Don_dhs { get; set; }
     }

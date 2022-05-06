@@ -14,9 +14,9 @@ namespace PTLChi.BTL._226.Models
         public int ID_KhachHang { get; set; }
         [Required, DisplayName("Tên khách hàng")]
         public string Ten_KhachHang { get; set; }
-        [Required, DisplayName("Số điện thoại khách hàng")]
+        [Required, DisplayName("SĐT khách Hàng")]
         public string Sdt { get; set; }
-        [Required, DisplayName("E-mail khách hàng")]
+        [Required, DisplayName("E-mail khách Hàng")]
         public string Email { get; set; }
         public ICollection<Don_dh> Don_dhs { get; set; }
     }
