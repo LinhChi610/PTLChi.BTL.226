@@ -164,6 +164,10 @@
     <Compile Include="Migrations\202205060426583_Abc.designer.cs">
       <DependentUpon>202205060426583_Abc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205060444117_Accountmodel.cs" />
+    <Compile Include="Migrations\202205060444117_Accountmodel.designer.cs">
+      <DependentUpon>202205060444117_Accountmodel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\BTLDbContext.cs" />
@@ -172,6 +176,7 @@
     <Compile Include="Models\Don_dh.cs" />
     <Compile Include="Models\Khach_Hang.cs" />
     <Compile Include="Models\Nhanvien_GH.cs" />
+    <Compile Include="Models\Role.cs" />
     <Compile Include="Models\SanPham.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -281,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205060426583_Abc.resx">
       <DependentUpon>202205060426583_Abc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205060444117_Accountmodel.resx">
+      <DependentUpon>202205060444117_Accountmodel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -15,7 +15,7 @@ namespace  PTLChi.BTL._226.Models
         public DbSet<SanPham> SanPhams { get; set; }
         public DbSet<Don_dh> Don_dhs { get; set; }
         public DbSet<Chitiet_dh> Chitiet_dhs { get; set; }
-        
+        public DbSet<AccountModel> AccountModels { get; set; }
         public DbSet<Danhmuc_sp> Danhmuc_sps { get; set; }
         public DbSet<Khach_hang> Khach_Hangs { get; set; }       
         public DbSet<Nhanvien_GH> Nhanvien_GHs { get; set; }
@@ -24,6 +24,6 @@ namespace  PTLChi.BTL._226.Models
         {
         }
 
-        public System.Data.Entity.DbSet<PTLChi.BTL._226.Models.AccountModel> AccountModels { get; set; }
+        
     }
 }
