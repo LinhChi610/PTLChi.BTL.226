@@ -129,6 +129,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountModelsController.cs" />
     <Compile Include="Controllers\Chitiet_dhController.cs" />
     <Compile Include="Controllers\Danhmuc_spController.cs" />
     <Compile Include="Controllers\Don_dhController.cs" />
@@ -159,7 +160,12 @@
     <Compile Include="Migrations\202205060256241_Delete Table3.designer.cs">
       <DependentUpon>202205060256241_Delete Table3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205060426583_Abc.cs" />
+    <Compile Include="Migrations\202205060426583_Abc.designer.cs">
+      <DependentUpon>202205060426583_Abc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\BTLDbContext.cs" />
     <Compile Include="Models\Chitiet_dh.cs" />
     <Compile Include="Models\Danhmuc_sp.cs" />
@@ -235,6 +241,11 @@
     <Content Include="Views\SanPhams\Details.cshtml" />
     <Content Include="Views\SanPhams\Edit.cshtml" />
     <Content Include="Views\SanPhams\Index.cshtml" />
+    <Content Include="Views\AccountModels\Create.cshtml" />
+    <Content Include="Views\AccountModels\Delete.cshtml" />
+    <Content Include="Views\AccountModels\Details.cshtml" />
+    <Content Include="Views\AccountModels\Edit.cshtml" />
+    <Content Include="Views\AccountModels\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -267,6 +278,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205060256241_Delete Table3.resx">
       <DependentUpon>202205060256241_Delete Table3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205060426583_Abc.resx">
+      <DependentUpon>202205060426583_Abc.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

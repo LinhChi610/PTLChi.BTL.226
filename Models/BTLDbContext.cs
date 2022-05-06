@@ -23,5 +23,7 @@ namespace  PTLChi.BTL._226.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
         }
+
+        public System.Data.Entity.DbSet<PTLChi.BTL._226.Models.AccountModel> AccountModels { get; set; }
     }
 }

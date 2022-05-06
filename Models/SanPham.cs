@@ -21,15 +21,15 @@ namespace PTLChi.BTL._226.Models
         public string Anh_Sanpham { get; set; }
         [Required, DisplayName("Giá sản phẩm")]
         public int Gia_Sanpham { get; set; }
-        [Required, DisplayName("Số lượng sản phẩm")]
+        [Required, DisplayName("Số lượng")]
         public int So_luong { get; set; }
-        [Required, DisplayName("Kích thước sản phẩm")]
+        [Required, DisplayName("Kích thước")]
         public string Kich_thuoc { get; set; }
-        [Required, DisplayName("Màu sắc sản phẩm")]
+        [Required, DisplayName("Màu sắc")]
         public string Mau_sac { get; set; }
-        [Required, DisplayName("Bộ nhớ máy")]
+        [Required, DisplayName("Bộ nhớ")]
         public string Bo_nho { get; set; }
-        [Required, DisplayName("Thời gian bảo hành")]
+        [Required, DisplayName("Bảo hành")]
         public string Bao_hanh { get; set; }
         [Required, DisplayName("Giá khuyến mãi")]
         public string Gia_khuyen_mai { get; set; }
