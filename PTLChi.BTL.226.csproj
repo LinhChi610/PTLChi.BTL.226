@@ -174,6 +174,7 @@
     <Compile Include="Models\Chitiet_dh.cs" />
     <Compile Include="Models\Danhmuc_sp.cs" />
     <Compile Include="Models\Don_dh.cs" />
+    <Compile Include="Models\Encrytion.cs" />
     <Compile Include="Models\Khach_Hang.cs" />
     <Compile Include="Models\Nhanvien_GH.cs" />
     <Compile Include="Models\Role.cs" />
@@ -251,6 +252,7 @@
     <Content Include="Views\AccountModels\Details.cshtml" />
     <Content Include="Views\AccountModels\Edit.cshtml" />
     <Content Include="Views\AccountModels\Index.cshtml" />
+    <Content Include="Views\AccountModels\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

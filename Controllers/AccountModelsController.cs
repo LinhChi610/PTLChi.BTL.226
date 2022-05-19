@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using PTLChi.BTL._226.Models;
 
 namespace PTLChi.BTL._226.Controllers
@@ -13,115 +14,142 @@ namespace PTLChi.BTL._226.Controllers
     public class AccountModelsController : Controller
     {
         private BTLDbContext db = new BTLDbContext();
+        Encrytion ecy = new Encrytion();
 
-        // GET: AccountModels
-        public ActionResult Index()
-        {
-            return View(db.AccountModels.ToList());
-        }
+        private object pro;
 
-        // GET: AccountModels/Details/5
-        public ActionResult Details(string id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            AccountModel accountModel = db.AccountModels.Find(id);
-            if (accountModel == null)
-            {
-                return HttpNotFound();
-            }
-            return View(accountModel);
-        }
+        public object DB { get; private set; }
 
-        // GET: AccountModels/Create
-        public ActionResult Create()
+        // GET: Accounts
+        [HttpGet]
+        public ActionResult Register()
         {
             return View();
         }
-
-        // POST: AccountModels/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Username,Password,Roleid")] AccountModel accountModel)
+        [AllowAnonymous]
+        public ActionResult Register(AccountModel acc)
         {
             if (ModelState.IsValid)
             {
-                db.AccountModels.Add(accountModel);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                //Mã Hóa mật khẩu trước khi cho vào database
+                acc.Password = (string)ecy.PasswordEncrytion(acc.Password);
+                DB.AccountModels.Add(acc);
+                DB.SaveChanges();
+                return RedirectToAction("Login", "Accounts");
             }
-
-            return View(accountModel);
+            return View(acc);
         }
+        public ActionResult Login(string returnUrl)
 
-        // GET: AccountModels/Edit/5
-        public ActionResult Edit(string id)
         {
-            if (id == null)
+            if (CheckSession() == 1)
+
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
+                return RedirectToAction("Index", "HomeAdmin", new { Area = "Nhân Viên GH" });
             }
-            AccountModel accountModel = db.AccountModels.Find(id);
-            if (accountModel == null)
+            else if (CheckSession() == 2)
+
             {
-                return HttpNotFound();
+                return RedirectToAction("Index", "HomeClient", new { Area = "Khách Hàng" });
+
             }
-            return View(accountModel);
+            ViewBag.ReturnUrl = returnUrl;
+            return View();
+
         }
 
-        // POST: AccountModels/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        private int CheckSession()
+        {
+            using (var db = new BTLDbContext())
+            {
+                var user = HttpContext.Session["idUser"];
+                if (user != null)
+                {
+                    var role = db.AccountModels.Find(user.ToString()).RoleID;
+                    if (role != null)
+                    {
+                        if (role.ToString() == "Admin")
+                        {
+                            return 1;
+                        }
+                        else if (role.ToString() == "Client")
+                        {
+                            return 2;
+                        }
+                    }
+                }
+            }
+            return 0;
+        }
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Username,Password,Roleid")] AccountModel accountModel)
+        [AllowAnonymous]
+
+        public ActionResult Login(AccountModel acc, string returnUrl)
+
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Entry(accountModel).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (!string.IsNullOrEmpty(acc.Username) && !string.IsNullOrEmpty(acc.Password))
+                {
+
+                    using (var db = new BTLDbContext())
+
+                    {
+                        var passTo12345 = pro.Get12345(acc.Password);
+                        var account = db.AccountModels.Where(m => m.Username.Equals(acc.Username) && m.Password.Equals(passTo12345)).Count();
+                        if (account == 1)
+                        {
+                            FormsAuthentication.SetAuthCookie(acc.Username, false);
+                            Session["idUser"] = acc.Username;
+                            return RedirectTolocal(returnUrl);
+                        }
+
+                        ModelState.AddModelError("", "Thông tin đăng nhập chưa chính xác");
+
+                    }
+                }
+                ModelState.AddModelError("", "Username and password is required.");
             }
-            return View(accountModel);
+
+            catch
+            {
+                ModelState.AddModelError("", "Hệ thống đang được bảo trì, vui lòng liên hệ với quản trị viên");
+            }
+            return View(acc);
         }
 
-        // GET: AccountModels/Delete/5
-        public ActionResult Delete(string id)
+        private ActionResult RedirectTolocal(string returnUrl)
         {
-            if (id == null)
+            if (string.IsNullOrEmpty(returnUrl) || returnUrl == "/")
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                if (CheckSession() == 1)
+                {
+                    return RedirectToAction("Index", "HomeAdmin", new { Area = "Admin" });
+                }
+                else if (CheckSession() == 2)
+                {
+                    return RedirectToAction("Index", "HomeClient", new { Area = "Client" });
+                }
             }
-            AccountModel accountModel = db.AccountModels.Find(id);
-            if (accountModel == null)
+            if (Url.IsLocalUrl(returnUrl))
             {
-                return HttpNotFound();
+                return Redirect(returnUrl);
             }
-            return View(accountModel);
-        }
+            else
+            {
+                return RedirectToAction("Index", "Home");
 
-        // POST: AccountModels/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
-        {
-            AccountModel accountModel = db.AccountModels.Find(id);
-            db.AccountModels.Remove(accountModel);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
             }
-            base.Dispose(disposing);
+        }
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            Session["iduser"] = null;
+            return RedirectToAction("Login", "Accounts");
         }
     }
 }
+

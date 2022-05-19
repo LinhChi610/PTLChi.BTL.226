@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Delete";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/_ViewStart.cshtml";
 }
 
 <h2>Delete</h2>
@@ -34,8 +34,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Xóa" class="btn btn-default" /> |
-            @Html.ActionLink("Quay Lại", "Index")
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
         </div>
     }
 </div>
