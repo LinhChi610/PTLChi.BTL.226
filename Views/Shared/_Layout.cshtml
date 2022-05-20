@@ -6,34 +6,46 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+<style>
+    ul {
+        list-style:none;
+    }
+    .navbar-nav {
+        display:flex;
+        align-items:center;
+    }
+    .navbar-nav .nav-item {
+        margin-right:20px;
+    }
+</style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active mx-2">@Html.ActionLink("Danh mục sản phẩm", "Index", "Danhmuc_sp")</li>
-                <li class="nav-item active mx-2">@Html.ActionLink("Sản Phẩm", "Index", "SanPhams")</li>
-                <li class="nav-item active mx-2">@Html.ActionLink("Khách Hàng", "Index", "Khach_Hang")</li>
-                <li class="nav-item active mx-2">@Html.ActionLink("Nhân viên giao hàng", "Index", "Nhanvien_GH")</li>
-                <li class="nav-item active mx-2">@Html.ActionLink("Đơn Đặt Hàng", "Index", "Don_dh")</li>
-                <li class="nav-item active mx-2">@Html.ActionLink("Chi tiết đơn hàng", "Index", "Chitiet_dh")</li>
+    <nav class="container navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            @if (User.Identity.IsAuthenticated)
+            {
+                <a class="navbar-brand" href="#">Hi Admin</a>
+            }           
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item  mx-2">@Html.ActionLink("Danh mục sản phẩm", "Index", "Danhmuc_sp", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item  mx-2">@Html.ActionLink("Sản Phẩm", "Index", "SanPhams", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item  mx-2">@Html.ActionLink("Khách Hàng", "Index", "Khach_Hang", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item  mx-2">@Html.ActionLink("Nhân viên giao hàng", "Index", "Nhanvien_GH", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item  mx-2">@Html.ActionLink("Đơn Đặt Hàng", "Index", "Don_dh", null, new { @class = "nav-link" })</li>
 
-
-                <li>
-                    @if (!User.Identity.IsAuthenticated)
+                    @if (User.Identity.IsAuthenticated)
                     {
-                        @Html.ActionLink("Đăng Nhập", "Login", "AccountModels")
+                        <li class="nav-item  mx-2">@Html.ActionLink("Chi tiết đơn hàng", "Index", "Chitiet_dh", null, new { @class = "nav - link" })</li>
+                        <li class="nav-item  mx-2">@Html.ActionLink("Đăng xuất", "Logout", "AccountModels")</li>
                     }
                     else
                     {
-                        @Html.ActionLink("Đăng xuất", "Logout", "AccountModels")
+                        <li class="nav-item  mx-2">@Html.ActionLink("Đăng Nhập", "Login", "AccountModels")</li>
+
                     }
-                </li>
-            </ul>
+                </ul>
+            </div>
         </div>
     </nav>
     <div class="container body-content">

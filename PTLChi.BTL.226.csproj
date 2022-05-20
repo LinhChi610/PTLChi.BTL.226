@@ -136,6 +136,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Khach_hangController.cs" />
     <Compile Include="Controllers\Nhanvien_GHController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\SanPhamsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -168,6 +169,14 @@
     <Compile Include="Migrations\202205060444117_Accountmodel.designer.cs">
       <DependentUpon>202205060444117_Accountmodel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205200952262_edit-model.cs" />
+    <Compile Include="Migrations\202205200952262_edit-model.designer.cs">
+      <DependentUpon>202205200952262_edit-model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205200956017_create_Role.cs" />
+    <Compile Include="Migrations\202205200956017_create_Role.designer.cs">
+      <DependentUpon>202205200956017_create_Role.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\BTLDbContext.cs" />
@@ -179,6 +188,7 @@
     <Compile Include="Models\Nhanvien_GH.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\SanPham.cs" />
+    <Compile Include="Models\UserRoleProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -247,12 +257,13 @@
     <Content Include="Views\SanPhams\Details.cshtml" />
     <Content Include="Views\SanPhams\Edit.cshtml" />
     <Content Include="Views\SanPhams\Index.cshtml" />
-    <Content Include="Views\AccountModels\Create.cshtml" />
-    <Content Include="Views\AccountModels\Delete.cshtml" />
-    <Content Include="Views\AccountModels\Details.cshtml" />
-    <Content Include="Views\AccountModels\Edit.cshtml" />
-    <Content Include="Views\AccountModels\Index.cshtml" />
     <Content Include="Views\AccountModels\Login.cshtml" />
+    <Content Include="Views\Roles\Create.cshtml" />
+    <Content Include="Views\Roles\Delete.cshtml" />
+    <Content Include="Views\Roles\Details.cshtml" />
+    <Content Include="Views\Roles\Edit.cshtml" />
+    <Content Include="Views\Roles\Index.cshtml" />
+    <Content Include="Views\AccountModels\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -291,6 +302,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205060444117_Accountmodel.resx">
       <DependentUpon>202205060444117_Accountmodel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205200952262_edit-model.resx">
+      <DependentUpon>202205200952262_edit-model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205200956017_create_Role.resx">
+      <DependentUpon>202205200956017_create_Role.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

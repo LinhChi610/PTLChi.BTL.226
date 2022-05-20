@@ -11,11 +11,11 @@ namespace PTLChi.BTL._226.Models
         [Key]
         [Required(ErrorMessage = "Username is required.")]
         public string Username { get; set; }
-        public object UserName { get; internal set; }
+       
         [Required(ErrorMessage = "Password is required.")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
         public string Roleid { get; set; }
-        public object RoleID { get; internal set; }
+        
     }
 }

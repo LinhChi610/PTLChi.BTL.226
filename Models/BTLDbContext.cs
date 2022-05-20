@@ -19,7 +19,7 @@ namespace  PTLChi.BTL._226.Models
         public DbSet<Danhmuc_sp> Danhmuc_sps { get; set; }
         public DbSet<Khach_hang> Khach_Hangs { get; set; }       
         public DbSet<Nhanvien_GH> Nhanvien_GHs { get; set; }
-        
+        public DbSet <Role> Roles { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
         }

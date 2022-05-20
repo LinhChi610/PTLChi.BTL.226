@@ -11,12 +11,8 @@ namespace PTLChi.BTL._226.Models
         [Obsolete]
         public string PassWordEncrytion(string pass)
         {
-            return FormsAuthentication.HashPasswordForStoringInConfigFile(pass.Trim(), "12345");
+            return FormsAuthentication.HashPasswordForStoringInConfigFile(pass.Trim(),"MD5");
         }
 
-        internal object PasswordEncrytion(object password)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

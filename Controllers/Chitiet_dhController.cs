@@ -10,6 +10,7 @@ using PTLChi.BTL._226.Models;
 
 namespace PTLChi.BTL._226.Controllers
 {
+    [Authorize]
     public class Chitiet_dhController : Controller
     {
         private BTLDbContext db = new BTLDbContext();

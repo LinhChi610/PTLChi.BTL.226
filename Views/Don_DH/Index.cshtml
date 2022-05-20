@@ -69,9 +69,18 @@
             @Html.DisplayFor(modelItem => item.Chi_chu)
         </td>
         <td>
-            @Html.ActionLink("Sửa", "Edit", new { id=item.ID_HoaDon }) |
-            @Html.ActionLink("Thông Tin Chi Tiết", "Details", new { id=item.ID_HoaDon }) |
-            @Html.ActionLink("Xóa", "Delete", new { id=item.ID_HoaDon })
+            @if (User.Identity.IsAuthenticated)
+            {
+                @Html.ActionLink("Thông Tin Chi Tiết |", "Details", new { id = item.ID_HoaDon })
+                @Html.ActionLink("Sửa |", "Edit", new { id = item.ID_HoaDon })
+                @Html.ActionLink("Xóa", "Delete", new { id = item.ID_HoaDon })
+            }
+            else
+            {
+                @Html.ActionLink("Thông Tin Chi Tiết", "Details", new { id = item.ID_HoaDon })
+
+            }
+
         </td>
     </tr>
 }

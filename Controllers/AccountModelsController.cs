@@ -16,10 +16,6 @@ namespace PTLChi.BTL._226.Controllers
         private BTLDbContext db = new BTLDbContext();
         Encrytion ecy = new Encrytion();
 
-        private object pro;
-
-        public object DB { get; private set; }
-
         // GET: Accounts
         [HttpGet]
         public ActionResult Register()
@@ -34,10 +30,10 @@ namespace PTLChi.BTL._226.Controllers
             if (ModelState.IsValid)
             {
                 //Mã Hóa mật khẩu trước khi cho vào database
-                acc.Password = (string)ecy.PasswordEncrytion(acc.Password);
-                DB.AccountModels.Add(acc);
-                DB.SaveChanges();
-                return RedirectToAction("Login", "Accounts");
+                acc.Password = ecy.PassWordEncrytion(acc.Password);
+                db.AccountModels.Add(acc);
+                db.SaveChanges();
+                return RedirectToAction("Login", "AccountModels");
             }
             return View(acc);
         }
@@ -48,12 +44,12 @@ namespace PTLChi.BTL._226.Controllers
 
             {
 
-                return RedirectToAction("Index", "HomeAdmin", new { Area = "Nhân Viên GH" });
+                return RedirectToAction("Index", "SanPhams", new { Area = "" });
             }
             else if (CheckSession() == 2)
 
             {
-                return RedirectToAction("Index", "HomeClient", new { Area = "Khách Hàng" });
+                return RedirectToAction("Index", "Home", new { Area = "" });
 
             }
             ViewBag.ReturnUrl = returnUrl;
@@ -68,7 +64,7 @@ namespace PTLChi.BTL._226.Controllers
                 var user = HttpContext.Session["idUser"];
                 if (user != null)
                 {
-                    var role = db.AccountModels.Find(user.ToString()).RoleID;
+                    var role = db.AccountModels.Find(user.ToString()).Roleid;
                     if (role != null)
                     {
                         if (role.ToString() == "Admin")
@@ -98,7 +94,7 @@ namespace PTLChi.BTL._226.Controllers
                     using (var db = new BTLDbContext())
 
                     {
-                        var passTo12345 = pro.Get12345(acc.Password);
+                        var passTo12345 = ecy.PassWordEncrytion(acc.Password);
                         var account = db.AccountModels.Where(m => m.Username.Equals(acc.Username) && m.Password.Equals(passTo12345)).Count();
                         if (account == 1)
                         {
@@ -127,11 +123,11 @@ namespace PTLChi.BTL._226.Controllers
             {
                 if (CheckSession() == 1)
                 {
-                    return RedirectToAction("Index", "HomeAdmin", new { Area = "Admin" });
+                    return RedirectToAction("Index", "SanPhams", new { Area = "" });
                 }
                 else if (CheckSession() == 2)
                 {
-                    return RedirectToAction("Index", "HomeClient", new { Area = "Client" });
+                    return RedirectToAction("Index", "Home", new { Area = "" });
                 }
             }
             if (Url.IsLocalUrl(returnUrl))
@@ -148,7 +144,7 @@ namespace PTLChi.BTL._226.Controllers
         {
             FormsAuthentication.SignOut();
             Session["iduser"] = null;
-            return RedirectToAction("Login", "Accounts");
+            return RedirectToAction("Login", "AccountModels");
         }
     }
 }

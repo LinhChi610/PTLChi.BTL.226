@@ -24,9 +24,17 @@
             @Html.DisplayFor(modelItem => item.Ten_Danhmuc)
         </td>
         <td>
-            @Html.ActionLink("Sửa", "Edit", new { id=item.ID_Danhmuc }) |
-            @Html.ActionLink("Thông Tin Chi Tiết", "Details", new { id=item.ID_Danhmuc }) |
-            @Html.ActionLink("Xóa", "Delete", new { id=item.ID_Danhmuc })
+            @if (User.Identity.IsAuthenticated)
+            {
+                @Html.ActionLink("Thông Tin Chi Tiết |", "Details", new { id = item.ID_Danhmuc })
+                @Html.ActionLink("Sửa |", "Edit", new { id = item.ID_Danhmuc })
+                @Html.ActionLink("Xóa", "Delete", new { id = item.ID_Danhmuc })
+            }
+            else
+            {
+                @Html.ActionLink("Thông Tin Chi Tiết ", "Details", new { id = item.ID_Danhmuc })
+
+            }            
         </td>
     </tr>
 }
