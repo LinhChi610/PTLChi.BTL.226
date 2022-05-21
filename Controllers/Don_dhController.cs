@@ -59,7 +59,7 @@ namespace PTLChi.BTL._226.Controllers
             }
 
             ViewBag.ID_KhachHang = new SelectList(db.Khach_Hangs, "ID_KhachHang", "Ten_KhachHang", don_dh.ID_KhachHang);
-            ViewBag.Id_NhanvienGH = new SelectList(db.Nhanvien_GHs, "ID_NhanvienGH", "Ten_NhanvienGH", don_dh.Id_NhanvienGH);
+            
             return View(don_dh);
         }
 
@@ -76,7 +76,7 @@ namespace PTLChi.BTL._226.Controllers
                 return HttpNotFound();
             }
             ViewBag.ID_KhachHang = new SelectList(db.Khach_Hangs, "ID_KhachHang", "Ten_KhachHang", don_dh.ID_KhachHang);
-            ViewBag.Id_NhanvienGH = new SelectList(db.Nhanvien_GHs, "ID_NhanvienGH", "Ten_NhanvienGH", don_dh.Id_NhanvienGH);
+
             return View(don_dh);
         }
 
@@ -94,7 +94,7 @@ namespace PTLChi.BTL._226.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.ID_KhachHang = new SelectList(db.Khach_Hangs, "ID_KhachHang", "Ten_KhachHang", don_dh.ID_KhachHang);
-            ViewBag.Id_NhanvienGH = new SelectList(db.Nhanvien_GHs, "ID_NhanvienGH", "Ten_NhanvienGH", don_dh.Id_NhanvienGH);
+            
             return View(don_dh);
         }
 

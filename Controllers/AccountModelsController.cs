@@ -25,6 +25,7 @@ namespace PTLChi.BTL._226.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [AllowAnonymous]
+        [Obsolete]
         public ActionResult Register(AccountModel acc)
         {
             if (ModelState.IsValid)
@@ -82,7 +83,7 @@ namespace PTLChi.BTL._226.Controllers
         }
         [HttpPost]
         [AllowAnonymous]
-
+        [Obsolete]
         public ActionResult Login(AccountModel acc, string returnUrl)
 
         {
