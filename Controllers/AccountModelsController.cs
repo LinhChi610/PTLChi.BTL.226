@@ -1,13 +1,10 @@
-﻿using System;
+﻿using PTLChi.BTL._226.Models;
+using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
 using System.Linq;
-using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-using PTLChi.BTL._226.Models;
 
 namespace PTLChi.BTL._226.Controllers
 {
@@ -41,50 +38,15 @@ namespace PTLChi.BTL._226.Controllers
         public ActionResult Login(string returnUrl)
 
         {
-            if (CheckSession() == 1)
-
-            {
-
-                return RedirectToAction("Index", "SanPhams", new { Area = "" });
-            }
-            else if (CheckSession() == 2)
-
-            {
-                return RedirectToAction("Index", "Home", new { Area = "" });
-
-            }
-            ViewBag.ReturnUrl = returnUrl;
             return View();
 
         }
 
-        private int CheckSession()
-        {
-            using (var db = new BTLDbContext())
-            {
-                var user = HttpContext.Session["idUser"];
-                if (user != null)
-                {
-                    var role = db.AccountModels.Find(user.ToString()).Roleid;
-                    if (role != null)
-                    {
-                        if (role.ToString() == "Admin")
-                        {
-                            return 1;
-                        }
-                        else if (role.ToString() == "Client")
-                        {
-                            return 2;
-                        }
-                    }
-                }
-            }
-            return 0;
-        }
+
         [HttpPost]
         [AllowAnonymous]
         [Obsolete]
-        public ActionResult Login(AccountModel acc, string returnUrl)
+        public ActionResult Login(AccountModel acc)
 
         {
             try
@@ -101,7 +63,7 @@ namespace PTLChi.BTL._226.Controllers
                         {
                             FormsAuthentication.SetAuthCookie(acc.Username, false);
                             Session["idUser"] = acc.Username;
-                            return RedirectTolocal(returnUrl);
+                            return RedirectToAction("Index","SanPhams");
                         }
 
                         ModelState.AddModelError("", "Thông tin đăng nhập chưa chính xác");
@@ -118,29 +80,6 @@ namespace PTLChi.BTL._226.Controllers
             return View(acc);
         }
 
-        private ActionResult RedirectTolocal(string returnUrl)
-        {
-            if (string.IsNullOrEmpty(returnUrl) || returnUrl == "/")
-            {
-                if (CheckSession() == 1)
-                {
-                    return RedirectToAction("Index", "SanPhams", new { Area = "" });
-                }
-                else if (CheckSession() == 2)
-                {
-                    return RedirectToAction("Index", "Home", new { Area = "" });
-                }
-            }
-            if (Url.IsLocalUrl(returnUrl))
-            {
-                return Redirect(returnUrl);
-            }
-            else
-            {
-                return RedirectToAction("Index", "Home");
-
-            }
-        }
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
@@ -149,4 +88,3 @@ namespace PTLChi.BTL._226.Controllers
         }
     }
 }
-

@@ -1,11 +1,11 @@
 ﻿@model PTLChi.BTL._226.Models.SanPham
 
 @{
-    ViewBag.Title = "Thông Tin Chi Tiết";
+    ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Thông Tin Chi Tiết</h2>
+<h2>Details</h2>
 
 <div>
     <h4>SanPham</h4>
@@ -110,6 +110,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Sửa", "Edit", new { id = Model.ID_Sanpham }) |
-    @Html.ActionLink("Quay Lại", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_Sanpham }) |
+    @Html.ActionLink("Back to List", "Index")
 </p>

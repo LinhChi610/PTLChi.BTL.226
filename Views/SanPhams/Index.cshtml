@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<PTLChi.BTL._226.Models.SanPham>
 
 @{
-    ViewBag.Title = "Trang Chủ";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Danh Sách Sản Phẩm</h2>
+<h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Thêm Mới", "Create")
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
@@ -51,59 +51,50 @@
         <th></th>
     </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ID_Danhmuc)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ten_Sanpham)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Anh_Sanpham)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Gia_Sanpham)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.So_luong)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Kich_thuoc)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Mau_sac)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Bo_nho)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Bao_hanh)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Gia_khuyen_mai)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Batdau_km)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ketthuc_km)
-            </td>
-            <td>
-                @if (User.Identity.IsAuthenticated)
-                {
-                    @Html.ActionLink("Thông Tin Chi Tiết |", "Details", new { id = item.ID_Sanpham }) 
-                    @Html.ActionLink("Sửa", "Edit |", new { id = item.ID_Sanpham })
-                    @Html.ActionLink("Xóa", "Delete", new { id = item.ID_Sanpham })
-                }
-                else
-                {
-                @Html.ActionLink("Thông Tin Chi Tiết", "Details", new { id = item.ID_Sanpham })
-
-                }
-            </td>
-        </tr>
-    }
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_Danhmuc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ten_Sanpham)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Anh_Sanpham)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gia_Sanpham)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.So_luong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kich_thuoc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mau_sac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bo_nho)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bao_hanh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gia_khuyen_mai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Batdau_km)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ketthuc_km)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_Sanpham }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_Sanpham }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_Sanpham })
+        </td>
+    </tr>
+}
 
 </table>

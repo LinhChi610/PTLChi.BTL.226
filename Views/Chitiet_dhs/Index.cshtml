@@ -1,0 +1,115 @@
+﻿@model IEnumerable<PTLChi.BTL._226.Models.Chitiet_dh>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_HoaDon)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.ID_KhachHang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ten_KhachHang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sanphams.ID_Sanpham)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Ten_Sanpham)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.So_luong_mua)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bao_hanh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gia_khuyen_mai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dia_Chi_Nhan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Chi_chu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ngay_lap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Id_NhanvienGH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ten_NhanvienGH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Don_gia)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ID_HoaDon)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.ID_KhachHang)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ten_KhachHang)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Sanphams.ID_Sanpham)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ten_Sanpham)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.So_luong_mua)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Bao_hanh)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Gia_khuyen_mai)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Dia_Chi_Nhan)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Chi_chu)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ngay_lap)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Id_NhanvienGH)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ten_NhanvienGH)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Don_gia)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ID_ChitietHoaDon }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ID_ChitietHoaDon }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ID_ChitietHoaDon })
+    </td>
+</tr>
+}
+
+</table>

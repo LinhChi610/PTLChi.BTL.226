@@ -5,21 +5,19 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Danh Sách Đơn Hàng</h2>
+<h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Thêm Mới", "Create")
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.ID_KhachHang)
         </th>
-
         <th>
             @Html.DisplayNameFor(model => model.Ngay_lap)
         </th>
-
         <th>
             @Html.DisplayNameFor(model => model.Tong_Gia)
         </th>
@@ -33,40 +31,28 @@
     </tr>
 
 @foreach (var item in Model) {
-<tr>
-
-
-    <td>
-        @Html.DisplayFor(modelItem => item.ID_KhachHang)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Ngay_lap)
-    </td>
-
-    <td>
-        @Html.DisplayFor(modelItem => item.Tong_Gia)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Dia_Chi_Nhan)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Chi_chu)
-    </td>
-    <td>
-        @if (User.Identity.IsAuthenticated)
-        {
-            @Html.ActionLink("Thông Tin Chi Tiết |", "Details", new { id = item.ID_HoaDon })
-            @Html.ActionLink("Sửa |", "Edit", new { id = item.ID_HoaDon })
-            @Html.ActionLink("Xóa", "Delete", new { id = item.ID_HoaDon })
-        }
-        else
-        {
-            @Html.ActionLink("Thông Tin Chi Tiết", "Details", new { id = item.ID_HoaDon })
-
-        }
-
-    </td>
-</tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_KhachHang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ngay_lap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tong_Gia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dia_Chi_Nhan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Chi_chu)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_HoaDon }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_HoaDon }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_HoaDon })
+        </td>
+    </tr>
 }
 
 </table>

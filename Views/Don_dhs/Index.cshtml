@@ -1,0 +1,64 @@
+﻿@model IEnumerable<PTLChi.BTL._226.Models.Don_dh>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_KhachHang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ten_KhachHang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ngay_lap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tong_Gia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dia_Chi_Nhan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Chi_chu)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ID_KhachHang)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ten_KhachHang)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ngay_lap)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Tong_Gia)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Dia_Chi_Nhan)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Chi_chu)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ID_HoaDon }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ID_HoaDon }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ID_HoaDon })
+    </td>
+</tr>
+}
+
+</table>

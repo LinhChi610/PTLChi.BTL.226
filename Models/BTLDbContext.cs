@@ -12,14 +12,13 @@ namespace  PTLChi.BTL._226.Models
             : base("name=BTLDbContext")
         {
         }
-        public DbSet<SanPham> SanPhams { get; set; }
-        public DbSet<Don_dh> Don_dhs { get; set; }
-        public DbSet<Chitiet_dh> Chitiet_dhs { get; set; }
-        public DbSet<AccountModel> AccountModels { get; set; }
-        public DbSet<Danhmuc_sp> Danhmuc_sps { get; set; }
-        public DbSet<Khach_hang> Khach_Hangs { get; set; }       
-        public DbSet<Nhanvien_GH> Nhanvien_GHs { get; set; }
-        public DbSet <Role> Roles { get; set; }
+        public virtual DbSet<SanPham> SanPhams { get; set; }
+        public virtual DbSet<Chitiet_dh> Chitiet_dhs { get; set; }
+        public virtual DbSet<Danhmuc_sp> Danhmuc_sps { get; set; }
+        public virtual DbSet<Khach_hang> Khach_Hangs { get; set; }       
+        public virtual DbSet<Nhanvien_GH>  Nhanvien_GHs  { get; set; }
+        public virtual DbSet<Don_dh> Don_Dhs { get; set; }
+        public virtual DbSet<AccountModel> AccountModels { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
         }

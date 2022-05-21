@@ -52,6 +52,12 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -130,56 +136,47 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountModelsController.cs" />
-    <Compile Include="Controllers\Chitiet_dhController.cs" />
-    <Compile Include="Controllers\Danhmuc_spController.cs" />
+    <Compile Include="Controllers\Chitiet_dhsController.cs" />
+    <Compile Include="Controllers\Danhmuc_spsController.cs" />
     <Compile Include="Controllers\Don_dhController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Khach_hangController.cs" />
-    <Compile Include="Controllers\Nhanvien_GHController.cs" />
-    <Compile Include="Controllers\RolesController.cs" />
+    <Compile Include="Controllers\Nhanvien_GHsController.cs" />
     <Compile Include="Controllers\SanPhamsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202203270504501_test.cs" />
-    <Compile Include="Migrations\202203270504501_test.designer.cs">
-      <DependentUpon>202203270504501_test.cs</DependentUpon>
+    <Compile Include="Migrations\202205211436599_1.cs" />
+    <Compile Include="Migrations\202205211436599_1.designer.cs">
+      <DependentUpon>202205211436599_1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202203270507186_test2.cs" />
-    <Compile Include="Migrations\202203270507186_test2.designer.cs">
-      <DependentUpon>202203270507186_test2.cs</DependentUpon>
+    <Compile Include="Migrations\202205211440564_create_acc.cs" />
+    <Compile Include="Migrations\202205211440564_create_acc.designer.cs">
+      <DependentUpon>202205211440564_create_acc.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202204171517324_delete table.cs" />
-    <Compile Include="Migrations\202204171517324_delete table.designer.cs">
-      <DependentUpon>202204171517324_delete table.cs</DependentUpon>
+    <Compile Include="Migrations\202205211448348_update-table.cs" />
+    <Compile Include="Migrations\202205211448348_update-table.designer.cs">
+      <DependentUpon>202205211448348_update-table.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202204171519158_delete table2.cs" />
-    <Compile Include="Migrations\202204171519158_delete table2.designer.cs">
-      <DependentUpon>202204171519158_delete table2.cs</DependentUpon>
+    <Compile Include="Migrations\202205211459059_update-table2.cs" />
+    <Compile Include="Migrations\202205211459059_update-table2.designer.cs">
+      <DependentUpon>202205211459059_update-table2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202205060256241_Delete Table3.cs" />
-    <Compile Include="Migrations\202205060256241_Delete Table3.designer.cs">
-      <DependentUpon>202205060256241_Delete Table3.cs</DependentUpon>
+    <Compile Include="Migrations\202205211503226_update-table3.cs" />
+    <Compile Include="Migrations\202205211503226_update-table3.designer.cs">
+      <DependentUpon>202205211503226_update-table3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202205060426583_Abc.cs" />
-    <Compile Include="Migrations\202205060426583_Abc.designer.cs">
-      <DependentUpon>202205060426583_Abc.cs</DependentUpon>
+    <Compile Include="Migrations\202205211525485_update-table4.cs" />
+    <Compile Include="Migrations\202205211525485_update-table4.designer.cs">
+      <DependentUpon>202205211525485_update-table4.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202205200956017_create_Role.cs" />
-    <Compile Include="Migrations\202205200956017_create_Role.designer.cs">
-      <DependentUpon>202205200956017_create_Role.cs</DependentUpon>
+    <Compile Include="Migrations\202205211526544_test.cs" />
+    <Compile Include="Migrations\202205211526544_test.designer.cs">
+      <DependentUpon>202205211526544_test.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202205210203541_Edit_Table.cs" />
-    <Compile Include="Migrations\202205210203541_Edit_Table.designer.cs">
-      <DependentUpon>202205210203541_Edit_Table.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205210247118_Edit2.cs" />
-    <Compile Include="Migrations\202205210247118_Edit2.designer.cs">
-      <DependentUpon>202205210247118_Edit2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205210314444_Edit3.cs" />
-    <Compile Include="Migrations\202205210314444_Edit3.designer.cs">
-      <DependentUpon>202205210314444_Edit3.cs</DependentUpon>
+    <Compile Include="Migrations\202205211647379_T4.cs" />
+    <Compile Include="Migrations\202205211647379_T4.designer.cs">
+      <DependentUpon>202205211647379_T4.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModel.cs" />
@@ -188,11 +185,9 @@
     <Compile Include="Models\Danhmuc_sp.cs" />
     <Compile Include="Models\Don_dh.cs" />
     <Compile Include="Models\Encrytion.cs" />
-    <Compile Include="Models\Khach_Hang.cs" />
+    <Compile Include="Models\Khach_hang.cs" />
     <Compile Include="Models\Nhanvien_GH.cs" />
-    <Compile Include="Models\Role.cs" />
     <Compile Include="Models\SanPham.cs" />
-    <Compile Include="Models\UserRoleProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -231,43 +226,43 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Chitiet_dh\Create.cshtml" />
-    <Content Include="Views\Chitiet_dh\Delete.cshtml" />
-    <Content Include="Views\Chitiet_dh\Details.cshtml" />
-    <Content Include="Views\Chitiet_dh\Edit.cshtml" />
-    <Content Include="Views\Chitiet_dh\Index.cshtml" />
-    <Content Include="Views\Danhmuc_sp\Create.cshtml" />
-    <Content Include="Views\Danhmuc_sp\Delete.cshtml" />
-    <Content Include="Views\Danhmuc_sp\Details.cshtml" />
-    <Content Include="Views\Danhmuc_sp\Edit.cshtml" />
-    <Content Include="Views\Danhmuc_sp\Index.cshtml" />
-    <Content Include="Views\Don_dh\Create.cshtml" />
-    <Content Include="Views\Don_dh\Delete.cshtml" />
-    <Content Include="Views\Don_dh\Details.cshtml" />
-    <Content Include="Views\Don_dh\Edit.cshtml" />
-    <Content Include="Views\Don_dh\Index.cshtml" />
-    <Content Include="Views\Khach_hang\Create.cshtml" />
-    <Content Include="Views\Khach_hang\Delete.cshtml" />
-    <Content Include="Views\Khach_hang\Details.cshtml" />
-    <Content Include="Views\Khach_hang\Edit.cshtml" />
-    <Content Include="Views\Khach_hang\Index.cshtml" />
-    <Content Include="Views\Nhanvien_GH\Create.cshtml" />
-    <Content Include="Views\Nhanvien_GH\Delete.cshtml" />
-    <Content Include="Views\Nhanvien_GH\Details.cshtml" />
-    <Content Include="Views\Nhanvien_GH\Edit.cshtml" />
-    <Content Include="Views\Nhanvien_GH\Index.cshtml" />
+    <Content Include="Views\Danhmuc_sps\Create.cshtml" />
+    <Content Include="Views\Danhmuc_sps\Delete.cshtml" />
+    <Content Include="Views\Danhmuc_sps\Details.cshtml" />
+    <Content Include="Views\Danhmuc_sps\Edit.cshtml" />
+    <Content Include="Views\Danhmuc_sps\Index.cshtml" />
     <Content Include="Views\SanPhams\Create.cshtml" />
     <Content Include="Views\SanPhams\Delete.cshtml" />
     <Content Include="Views\SanPhams\Details.cshtml" />
     <Content Include="Views\SanPhams\Edit.cshtml" />
     <Content Include="Views\SanPhams\Index.cshtml" />
-    <Content Include="Views\AccountModels\Login.cshtml" />
-    <Content Include="Views\Roles\Create.cshtml" />
-    <Content Include="Views\Roles\Delete.cshtml" />
-    <Content Include="Views\Roles\Details.cshtml" />
-    <Content Include="Views\Roles\Edit.cshtml" />
-    <Content Include="Views\Roles\Index.cshtml" />
+    <Content Include="Views\Khach_hang\Create.cshtml" />
+    <Content Include="Views\Khach_hang\Delete.cshtml" />
+    <Content Include="Views\Khach_hang\Details.cshtml" />
+    <Content Include="Views\Khach_hang\Edit.cshtml" />
+    <Content Include="Views\Khach_hang\Index.cshtml" />
+    <Content Include="Views\Nhanvien_GHs\Create.cshtml" />
+    <Content Include="Views\Nhanvien_GHs\Delete.cshtml" />
+    <Content Include="Views\Nhanvien_GHs\Details.cshtml" />
+    <Content Include="Views\Nhanvien_GHs\Edit.cshtml" />
+    <Content Include="Views\Nhanvien_GHs\Index.cshtml" />
+    <Content Include="Views\Don_dhs\Create.cshtml" />
+    <Content Include="Views\Don_dhs\Delete.cshtml" />
+    <Content Include="Views\Don_dhs\Details.cshtml" />
+    <Content Include="Views\Don_dhs\Edit.cshtml" />
+    <Content Include="Views\Don_dhs\Index.cshtml" />
+    <Content Include="Views\Chitiet_dhs\Create.cshtml" />
+    <Content Include="Views\Chitiet_dhs\Delete.cshtml" />
+    <Content Include="Views\Chitiet_dhs\Details.cshtml" />
+    <Content Include="Views\Chitiet_dhs\Edit.cshtml" />
+    <Content Include="Views\Chitiet_dhs\Index.cshtml" />
     <Content Include="Views\AccountModels\Register.cshtml" />
+    <Content Include="Views\AccountModels\Login.cshtml" />
+    <Content Include="Views\Don_dh\Create.cshtml" />
+    <Content Include="Views\Don_dh\Delete.cshtml" />
+    <Content Include="Views\Don_dh\Details.cshtml" />
+    <Content Include="Views\Don_dh\Edit.cshtml" />
+    <Content Include="Views\Don_dh\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -286,35 +281,29 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202203270504501_test.resx">
-      <DependentUpon>202203270504501_test.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205211436599_1.resx">
+      <DependentUpon>202205211436599_1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202203270507186_test2.resx">
-      <DependentUpon>202203270507186_test2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205211440564_create_acc.resx">
+      <DependentUpon>202205211440564_create_acc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202204171517324_delete table.resx">
-      <DependentUpon>202204171517324_delete table.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205211448348_update-table.resx">
+      <DependentUpon>202205211448348_update-table.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202204171519158_delete table2.resx">
-      <DependentUpon>202204171519158_delete table2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205211459059_update-table2.resx">
+      <DependentUpon>202205211459059_update-table2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205060256241_Delete Table3.resx">
-      <DependentUpon>202205060256241_Delete Table3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205211503226_update-table3.resx">
+      <DependentUpon>202205211503226_update-table3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205060426583_Abc.resx">
-      <DependentUpon>202205060426583_Abc.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205211525485_update-table4.resx">
+      <DependentUpon>202205211525485_update-table4.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205200956017_create_Role.resx">
-      <DependentUpon>202205200956017_create_Role.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205211526544_test.resx">
+      <DependentUpon>202205211526544_test.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205210203541_Edit_Table.resx">
-      <DependentUpon>202205210203541_Edit_Table.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205210247118_Edit2.resx">
-      <DependentUpon>202205210247118_Edit2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205210314444_Edit3.resx">
-      <DependentUpon>202205210314444_Edit3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205211647379_T4.resx">
+      <DependentUpon>202205211647379_T4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -5,10 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Danh Sách Khách Hàng</h2>
+<h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Thêm Mới", "Create")
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
@@ -36,18 +36,9 @@
             @Html.DisplayFor(modelItem => item.Email)
         </td>
         <td>
-            @if (User.Identity.IsAuthenticated)
-            {
-                @Html.ActionLink("Thông Tin Chi Tiết |", "Details", new { id = item.ID_KhachHang })
-                @Html.ActionLink("Sửa |", "Edit", new { id = item.ID_KhachHang })
-                @Html.ActionLink("Xóa", "Delete", new { id = item.ID_KhachHang })
-            }
-            else
-            {
-                @Html.ActionLink("Thông Tin Chi Tiết ", "Details", new { id = item.ID_KhachHang })
-
-            }
-
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_KhachHang }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_KhachHang }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_KhachHang })
         </td>
     </tr>
 }
