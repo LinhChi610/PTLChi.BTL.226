@@ -177,6 +177,18 @@
     <Compile Include="Migrations\202205200956017_create_Role.designer.cs">
       <DependentUpon>202205200956017_create_Role.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205210203541_Edit_Table.cs" />
+    <Compile Include="Migrations\202205210203541_Edit_Table.designer.cs">
+      <DependentUpon>202205210203541_Edit_Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205210247118_Edit2.cs" />
+    <Compile Include="Migrations\202205210247118_Edit2.designer.cs">
+      <DependentUpon>202205210247118_Edit2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205210314444_Edit3.cs" />
+    <Compile Include="Migrations\202205210314444_Edit3.designer.cs">
+      <DependentUpon>202205210314444_Edit3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\BTLDbContext.cs" />
@@ -308,6 +320,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205200956017_create_Role.resx">
       <DependentUpon>202205200956017_create_Role.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205210203541_Edit_Table.resx">
+      <DependentUpon>202205210203541_Edit_Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205210247118_Edit2.resx">
+      <DependentUpon>202205210247118_Edit2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205210314444_Edit3.resx">
+      <DependentUpon>202205210314444_Edit3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

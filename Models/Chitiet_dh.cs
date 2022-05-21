@@ -21,11 +21,14 @@ namespace  PTLChi.BTL._226.Models
         public virtual Don_dh Don_dhs { get; set; }
         [Required, DisplayName("ID Khách hàng")]
         public int ID_KhachHang { get; set; }
-
+        [Required, DisplayName("Tên Khách Hàng")]
+        public string Ten_KhachHang { get; set; }
         [Required, DisplayName("ID Sản phẩm")]
         public int ID_Sanpham { get; set; }
         [ForeignKey("ID_Sanpham")]
         public virtual SanPham Sanphams { get; set; }
+        [Required, DisplayName("Tên Sản Phẩm")]
+        public string Ten_Sanpham { get; set; }
         [Required, DisplayName("Số lượng")]
         public int So_luong_mua { get; set; }
         [Required, DisplayName("Bảo hành")]
@@ -42,6 +45,8 @@ namespace  PTLChi.BTL._226.Models
         public DateTime Ngay_lap { get; set; }
         [Required, DisplayName("ID Nhân viên giao hàng")]
         public int Id_NhanvienGH { get; set; }
+        [Required, DisplayName("Tên Nhân Viên GH")]
+        public string Ten_NhanvienGH { get; set; }
 
         [Required, DisplayName("Tổng Hóa Đơn")]
         public int Don_gia { get; set; }
