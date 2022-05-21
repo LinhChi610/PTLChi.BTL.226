@@ -165,14 +165,6 @@
     <Compile Include="Migrations\202205060426583_Abc.designer.cs">
       <DependentUpon>202205060426583_Abc.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202205060444117_Accountmodel.cs" />
-    <Compile Include="Migrations\202205060444117_Accountmodel.designer.cs">
-      <DependentUpon>202205060444117_Accountmodel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205200952262_edit-model.cs" />
-    <Compile Include="Migrations\202205200952262_edit-model.designer.cs">
-      <DependentUpon>202205200952262_edit-model.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\202205200956017_create_Role.cs" />
     <Compile Include="Migrations\202205200956017_create_Role.designer.cs">
       <DependentUpon>202205200956017_create_Role.cs</DependentUpon>
@@ -311,12 +303,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205060426583_Abc.resx">
       <DependentUpon>202205060426583_Abc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205060444117_Accountmodel.resx">
-      <DependentUpon>202205060444117_Accountmodel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205200952262_edit-model.resx">
-      <DependentUpon>202205200952262_edit-model.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205200956017_create_Role.resx">
       <DependentUpon>202205200956017_create_Role.cs</DependentUpon>

@@ -17,7 +17,7 @@ namespace PTLChi.BTL._226.Controllers
         // GET: Don_dh
         public ActionResult Index()
         {
-            var don_dhs = db.Don_dhs.Include(d => d.Khach_hangs).Include(d => d.Nhanvien_GHs);
+            var don_dhs = db.Don_dhs.Include(d => d.Khach_hangs);
             return View(don_dhs.ToList());
         }
 
@@ -40,7 +40,7 @@ namespace PTLChi.BTL._226.Controllers
         public ActionResult Create()
         {
             ViewBag.ID_KhachHang = new SelectList(db.Khach_Hangs, "ID_KhachHang", "Ten_KhachHang");
-            ViewBag.Id_NhanvienGH = new SelectList(db.Nhanvien_GHs, "ID_NhanvienGH", "Ten_NhanvienGH");
+            
             return View();
         }
 
@@ -85,7 +85,7 @@ namespace PTLChi.BTL._226.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID_HoaDon,ID_KhachHang,Id_NhanvienGH,Ngay_lap,Bao_hanh,Gia_khuyen_mai,Tong_Gia,Dia_Chi_Nhan,Chi_chu")] Don_dh don_dh)
+        public ActionResult Edit([Bind(Include = "ID_HoaDon,ID_KhachHang,Ngay_lap,Tong_Gia,Dia_Chi_Nhan,Chi_chu")] Don_dh don_dh)
         {
             if (ModelState.IsValid)
             {
