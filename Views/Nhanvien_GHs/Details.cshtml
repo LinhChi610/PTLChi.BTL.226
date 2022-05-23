@@ -5,10 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Thông Tin Nhân Viên Giao Hàng</h2>
 
 <div>
-    <h4>Nhanvien_GH</h4>
+    
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -38,6 +38,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_NhanvienGH }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.ID_NhanvienGH }) |
+    @Html.ActionLink("Quay Lại", "Index")
 </p>

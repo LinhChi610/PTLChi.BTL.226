@@ -7,13 +7,13 @@ namespace PTLChi.BTL._226.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class T4 : IMigrationMetadata
+    public sealed partial class T5 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(T4));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(T5));
         
         string IMigrationMetadata.Id
         {
-            get { return "202205211647379_T4"; }
+            get { return "202205211658578_T5"; }
         }
         
         string IMigrationMetadata.Source

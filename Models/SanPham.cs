@@ -11,10 +11,9 @@ namespace PTLChi.BTL._226.Models
     public class SanPham
     {
         [Key]
+        
         [DisplayName("ID Sản phẩm")]
         public int ID_Sanpham { get; set; }
-        [Required, DisplayName("ID Danh mục")]
-        public string ID_Danhmuc { get; set; }
         [Required, DisplayName("Tên sản phẩm")]
         public string Ten_Sanpham { get; set; }
         [Required, DisplayName("Ảnh sản phẩm")]

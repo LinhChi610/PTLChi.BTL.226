@@ -46,7 +46,7 @@ namespace PTLChi.BTL._226.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID_HoaDon,ID_KhachHang,Ngay_lap,Tong_Gia,Dia_Chi_Nhan,Chi_chu")] Don_dh don_dh)
+        public ActionResult Create([Bind(Include = "ID_HoaDon,ID_KhachHang,Ten_KhachHang,Ngay_lap,Tong_Gia,Dia_Chi_Nhan,Chi_chu")] Don_dh don_dh)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace PTLChi.BTL._226.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID_HoaDon,ID_KhachHang,Ngay_lap,Tong_Gia,Dia_Chi_Nhan,Chi_chu")] Don_dh don_dh)
+        public ActionResult Edit([Bind(Include = "ID_HoaDon,ID_KhachHang,Ten_KhachHang,Ngay_lap,Tong_Gia,Dia_Chi_Nhan,Chi_chu")] Don_dh don_dh)
         {
             if (ModelState.IsValid)
             {

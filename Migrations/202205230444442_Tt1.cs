@@ -3,14 +3,16 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class T4 : DbMigration
+    public partial class Tt1 : DbMigration
     {
         public override void Up()
         {
+            DropColumn("dbo.SanPhams", "ID_Danhmuc");
         }
         
         public override void Down()
         {
+            AddColumn("dbo.SanPhams", "ID_Danhmuc", c => c.String(nullable: false));
         }
     }
 }
