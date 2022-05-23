@@ -178,9 +178,9 @@
     <Compile Include="Migrations\202205211658578_T5.designer.cs">
       <DependentUpon>202205211658578_T5.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202205230444442_Tt1.cs" />
-    <Compile Include="Migrations\202205230444442_Tt1.designer.cs">
-      <DependentUpon>202205230444442_Tt1.cs</DependentUpon>
+    <Compile Include="Migrations\202205230919329_eeee.cs" />
+    <Compile Include="Migrations\202205230919329_eeee.designer.cs">
+      <DependentUpon>202205230919329_eeee.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModel.cs" />
@@ -304,8 +304,8 @@
     <EmbeddedResource Include="Migrations\202205211658578_T5.resx">
       <DependentUpon>202205211658578_T5.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205230444442_Tt1.resx">
-      <DependentUpon>202205230444442_Tt1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205230919329_eeee.resx">
+      <DependentUpon>202205230919329_eeee.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
